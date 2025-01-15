@@ -1,0 +1,21 @@
+---
+import BaseLayout from '@/layouts/BaseLayout'
+import TitlePage from '@/components/TitlePage'
+import { getTours } from '@/utils'
+const tours = await getTours()
+---
+<BaseLayout title='tours'>
+	<TitlePage title='tours' />
+	<div class='flex justify-center flex-wrap gap-4'>
+		{
+			tours.map((tour) => (
+				<a
+					href={`/tours/${tour.slug}`}
+					class='inline-block bg-gray-200  rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'
+				>
+					#{tour.data.title}
+				</a>
+			))
+		}
+	</div>
+</BaseLayout>

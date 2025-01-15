@@ -1,23 +1,23 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout'
-import ListPosts from '@/components/ListPosts'
+import ListTours from '@/components/ListTours'
 import ListCategories from '@/components/ListCategories'
 import TitlePage from '@/components/TitlePage'
-import { sluglify, unsluglify, getCategories, getPosts } from '@/utils'
+import { sluglify, unsluglify, getCategories, getTours } from '@/utils'
 import { siteConfig } from '@/data/site.config'
 import Pagination from '@/components/Pagination'
 
 export async function getStaticPaths({ paginate }: any) {
 	const categories = await getCategories()
-	const allPosts = await getPosts()
+	const allTours = await getTours()
 
 	return categories.flatMap((category: string) => {
 		const unsluglifyNameCategory = unsluglify(category!.toLowerCase())
-		const filteredPosts = allPosts.filter(
-			(post) => post.data.category.toLowerCase() === unsluglifyNameCategory
+		const filteredTours = allTours.filter(
+			(tour) => tour.data.category.toLowerCase() === unsluglifyNameCategory
 		)
 
-		return paginate(filteredPosts, {
+		return paginate(filteredTours, {
 			params: {
 				category: sluglify(category.toLowerCase())
 			},
@@ -32,12 +32,12 @@ const unsluglifyNameCategory = unsluglify(params.category!.toLowerCase())
 const categoryName = (await getCategories()).find(
 	(category) => category.toLowerCase() === unsluglifyNameCategory
 )
-const posts = page.data
+const tours = page.data
 ---
 
 <BaseLayout title={categoryName}>
 	<TitlePage title={categoryName} />
 	<ListCategories activeCategory={params.category} />
-	<ListPosts posts={posts} />
+	<ListTours tours={tours} />
 	<Pagination page={page} />
 </BaseLayout>

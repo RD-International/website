@@ -1,0 +1,24 @@
+---
+import BaseLayout from '@/layouts/BaseLayout'
+import ListTours from '@/components/ListTours'
+import TitlePage from '@/components/TitlePage'
+import { getCountries, getTourByCountry } from '@/utils'
+
+export async function getStaticPaths() {
+	const countries = await getCountries()
+
+	return countries.map((country) => ({
+		params: { country },
+		props: { country }
+	}))
+}
+
+const { country } = Astro.props
+
+const tours = await getTourByCountry(country)
+---
+
+<BaseLayout title={country}>
+	<TitlePage title={country} />
+	<ListTours tours={tours} />
+</BaseLayout>

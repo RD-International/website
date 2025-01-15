@@ -1,46 +1,46 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content'
-import BlogPost from '@/layouts/BlogPost'
+import TourListing from '@/layouts/TourListing'
 import Code from '@/components/mdx/Code'
-import ListRelatedPosts from '@/components/ListRelatedPosts'
+//import ListRelatedTours from '@/components/ListRelatedTours'
 import Share from '@/components/Share'
 import TableOfContents from '@/components/TableOfContents'
-import { getPosts } from '@/utils'
+import { getTours } from '@/utils'
 import SButton from '@/components/mdx/SButton'
 import Disqus from '@/components/Disqus'
 import { disqusConfig } from '@/data/disqus.config'
 
-const posts = await getCollection('blog')
+const tours = await getCollection('tours')
 export async function getStaticPaths() {
-	const posts = await getPosts()
+	const tours = await getTours()
 
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: post
+	return tours.map((tour) => ({
+		params: { slug: tour.slug },
+		props: tour
 	}))
 }
-type Props = CollectionEntry<'blog'>
+type Props = CollectionEntry<'tours'>
 
-const post = Astro.props
-const MAX_POSTS = 3
-const getRelatedPosts = (post: Props) => {
-	const lowercaseTags = post.data.tags.map((tag) => tag.toLowerCase())
-	const relatedPosts = posts.filter(
-		(p) => p.slug !== post.slug && p.data.tags.some((t) => lowercaseTags.includes(t.toLowerCase()))
+const tour = Astro.props
+const MAX_TOURS = 3
+const getRelatedTours = (tour: Props) => {
+	const lowercaseCountries = tour.data.countries.map((country) => country.toLowerCase())
+	const relatedTours = tours.filter(
+		(p) => p.slug !== tour.slug && p.data.countries.some((t) => lowercaseCountries.includes(t.toLowerCase()))
 	)
-	return relatedPosts.slice(0, MAX_POSTS)
+	return relatedTours.slice(0, MAX_TOURS)
 }
 
-const relatedPosts = getRelatedPosts(post)
+const relatedTours = getRelatedTours(tour)
 
-const { Content, headings, remarkPluginFrontmatter } = await post.render()
+const { Content, headings, remarkPluginFrontmatter } = await tour.render()
 
 const disqusEnabled = disqusConfig.enabled
 ---
 
-<BlogPost
-	id={post.id}
-	data={post.data}
+<TourListing
+	id={tour.id}
+	data={tour.data}
 	headings={headings}
 	readTime={remarkPluginFrontmatter.minutesRead}
 >
@@ -53,19 +53,19 @@ const disqusEnabled = disqusConfig.enabled
 			</div>
 		</aside>
 
-		<!-- post -->
+		<!-- tour -->
 		<article class='max-w-full w-full'>
 			<div class='prose prose-lg md:prose-xl dark:prose-invert mb-12 min-w-full'>
 				<Content components={{ pre: Code, SButton }} />
 			</div>
 
-			<!-- related posts -->
+			<!-- related tours -->
 			<footer>
-				<h2 class='font-bold text-lg dark:text-white mb-6'>Related Posts</h2>
-				<ListRelatedPosts posts={relatedPosts} />
+				<h2 class='font-bold text-lg dark:text-white mb-6'>Related Tours</h2>
+				<!--<ListRelatedTours tours={relatedTours} />-->
 			</footer>
 		</article>
 	</div>
 
 	{disqusEnabled && <Disqus />}
-</BlogPost>
+</TourListing>
