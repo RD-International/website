@@ -22,9 +22,9 @@ export default defineConfig({
 	schema: {
 		collections: [
 			{
-				name: 'post',
-				label: 'Blog Post',
-				path: 'src/content/blog',
+				name: 'tour',
+				label: 'Tour',
+				path: 'src/content/tours',
 				format: 'mdx',
 				fields: [
 					{
@@ -32,7 +32,7 @@ export default defineConfig({
 						label: 'Cover Image',
 						required: true,
 						name: 'heroImage',
-						description: 'The image used for the cover of the post'
+						description: 'The image used for the cover of the tour'
 					},
 
 					{
@@ -40,7 +40,7 @@ export default defineConfig({
 						required: true,
 						name: 'category',
 						label: 'Category',
-						description: 'Select an category for this post',
+						description: 'Select an category for this tour',
 						options: [...CATEGORIES]
 					},
 					{
@@ -48,7 +48,7 @@ export default defineConfig({
 						label: 'description',
 						required: true,
 						name: 'description',
-						description: 'A short description of the post'
+						description: 'A short description of the tour'
 					},
 					{
 						type: 'datetime',
@@ -60,17 +60,17 @@ export default defineConfig({
 						name: 'draft',
 						label: 'Draft',
 						type: 'boolean',
-						description: 'If this is checked the post will not be published'
+						description: 'If this is checked the tour will not be published'
 					},
 					{
 						type: 'string',
-						name: 'tags',
+						name: 'country',
 						required: true,
-						label: 'Tags',
-						description: 'Tags for this post',
+						label: 'Country',
+						description: 'Country for this tour',
 						list: true,
 						ui: {
-							component: 'tags'
+							component: 'country'
 						}
 					},
 					{

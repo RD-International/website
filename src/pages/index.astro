@@ -4,6 +4,10 @@ import ListTours from '@/components/ListTours'
 import Hero from '@/components/Hero'
 import PricingSection from '@/components/PricingSection'
 import BentoBox from '@/components/BentoBox'
+import CTA from '@/components/CTA'
+import Description from '@/components/Description'
+import Reviews from '@/components/Reviews'
+import GetInTouch from '@/components/GetInTouch'
 import TitlePage from '@/components/TitlePage'
 import BaseLayout from '@/layouts/BaseLayout'
 import { getTours } from '@/utils'
@@ -14,9 +18,12 @@ const tours = await getTours(MAX_TOURS)
 ---
 
 <Hero/>
-<BentoBox/>
+<!--<BentoBox/>-->
+
+
+  <Description/>
 <BaseLayout title='Home'>
-	<TitlePage title={siteConfig.title} />
+	<TitlePage title="Tours" />
 	<ListCategories />
 
 	<div>
@@ -24,6 +31,11 @@ const tours = await getTours(MAX_TOURS)
 		<ListTours FirstBig={true} tours={tours} />
 	</div>
 </BaseLayout>
+
+  <Reviews/>
+
+  <CTA/>
+  <GetInTouch/>
 
 <PricingSection/>
 

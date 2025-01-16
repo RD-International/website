@@ -23,7 +23,7 @@
 6. [Running locally](#-Running-Locally)
 7. [Configure](#-Configure)
 8. [Categories](#-Adding-a-category)
-9. [Posts](#-Adding-a-post)
+9. [Tours](#-Adding-a-tour)
 10. [Draft](#-Activating-draft-mode)
 11. [FrontMatter](#-Frontmatter)
 12. [CLI](#-Commands)
@@ -40,7 +40,7 @@ https://github.com/danielcgilibert/blog-template/assets/44746462/56b8399e-cc5b-4
 
 By default, this template comes pre-configured with Tina CMS.
 
-Now you can create your posts directly from the CMS without the need to do it manually.
+Now you can create your tours directly from the CMS without the need to do it manually.
 
 If you decide to use Tina, it's not necessary to add any properties to the Markdown files, Tina does it automatically.
 
@@ -73,8 +73,8 @@ The documentation for Tina CMS can be found [here](https://tina.io/docs/)
 - ✅ Dark mode
 - ✅ Reading Time
 - ✅ [Pagefind](https://pagefind.app/) static search library integration
-- ✅ Related posts
-- ✅ Share posts (Linkedin, twitter)
+- ✅ Related tours
+- ✅ Share tours (Linkedin, twitter)
 - ✅ Draft mode
 - ✅ Copy code block
 - ✅ CMS in the repository (Tina CMS)
@@ -84,7 +84,7 @@ The documentation for Tina CMS can be found [here](https://tina.io/docs/)
 
 ## 🛣️ Roadmap
 
-- ❌ Add post author
+- ❌ Add tour author
 - ❌ Add customization with colors
 - ❌ Add filters for reading time, date...
 - ❌ More sharing options
@@ -132,7 +132,7 @@ pnpm dev
 - Modify the files in the **/public** folder:
   - favicon
   - robots.txt -> update the Sitemap url to your own domain
-  - open-graph -> the open-graph is the image that will be displayed when sharing the blog link. For posts, the preview image is the post cover.
+  - open-graph -> the open-graph is the image that will be displayed when sharing the blog link. For tours, the preview image is the tour cover.
 - Edit the social networks in **src/data/links.ts**, change the URL to your social network.
 
 ## 🗂️ Adding a category
@@ -151,11 +151,11 @@ export  const  CATEGORIES  =  [
 
 > 🚨 Zod checks whether the category is not correctly written or does not exist in the properties of the markdown document. **It will throw an error when building the application.** 🚨
 
-## 📄 Adding a post
+## 📄 Adding a tour
 
-Adding a post is as simple as adding a .md or .mdx file to the blog folder at the path **src/content/blog**. The filename will be used to create the slug/URL of the page.
+Adding a tour is as simple as adding a .md or .mdx file to the blog folder at the path **src/content/blog**. The filename will be used to create the slug/URL of the page.
 
-For example, if you have a file named **jsx-and-react.md**, it will be transformed into: **http://yourdomain.com/post/jsx-and-react/**
+For example, if you have a file named **jsx-and-react.md**, it will be transformed into: **http://yourdomain.com/tour/jsx-and-react/**
 
 ## 📝 Activating draft mode
 
@@ -180,7 +180,7 @@ draft: true <---
 - Title
 - Description
 - pubDate
-- heroImage (post cover)
+- heroImage (tour cover)
 - category (Choose a category from src/data/categories.ts)
 
 ## Optional properties:
@@ -188,7 +188,7 @@ draft: true <---
 - draft (no need to include it, by default it's false)
 - tags
 
-> The schema for posts is located at src/content/config.ts. You can modify any parameter, for example, by adding a maximum of 80 characters for titles: title: z.string().max(80).
+> The schema for tours is located at src/content/config.ts. You can modify any parameter, for example, by adding a maximum of 80 characters for titles: title: z.string().max(80).
 > For more information, refer to the zod documentation.
 
 ## 🧞 Commands

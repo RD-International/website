@@ -1,4 +1,4 @@
-// List of categories for blog posts
+// List of categories for blog tours
 export const CATEGORIES = [
 	'Category 1',
 	'Category 2',

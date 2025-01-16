@@ -1,0 +1,42 @@
+---
+import type { CollectionEntry } from 'astro:content'
+
+import { cn } from '@/utils'
+import { Image } from 'astro:assets'
+
+type Props = {
+	tours: CollectionEntry<'blog'>[]
+}
+
+const { tours } = Astro.props
+---
+
+<section class={cn(`flex flex-col md:flex-row sm:justify-between gap-8`)}>
+	{
+		tours.length > 0 ? (
+			tours.map((tour) => {
+				return (
+					<div class='flex flex-wrap gap-2'>
+						<div class='min-h-full'>
+							<Image
+								src={tour.data.heroImage}
+								width={200}
+								height={200}
+								format='webp'
+								class='w-16 h-16 object-cover rounded-full  '
+								alt={`img of ${tour.data.title}`}
+							/>
+						</div>
+						<header class='flex justify-center items-center'>
+							<a class='font-medium  hover:underline' href={`/tour/${tour.slug}/`}>
+								{tour.data.title}
+							</a>
+						</header>
+					</div>
+				)
+			})
+		) : (
+			<span class='text-gray-500'>There are no related tours yet. 😢</span>
+		)
+	}
+</section>
