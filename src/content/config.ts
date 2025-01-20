@@ -16,7 +16,10 @@ const tours = defineCollection({
 			category: z.enum(CATEGORIES),
 			country: z.string(),
 			city: z.string(),
-			draft: z.boolean().default(false)
+			draft: z.boolean().default(false),
+			price: z.number(),
+			minPeopleCount: z.number(),
+			duration: z.number()
 		})
 })
 

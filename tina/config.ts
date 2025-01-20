@@ -63,15 +63,38 @@ export default defineConfig({
 						description: 'If this is checked the tour will not be published'
 					},
 					{
+						name: 'minPeopleCount',
+						label: 'Minimum People Count',
+						type: 'number',
+						description: 'The amount of people needed for this package'
+					},
+
+					{
+						name: 'price',
+						label: 'Price',
+						type: 'number',
+						description: 'Price for the tour'
+					},
+
+					{
+						name: 'duration',
+						label: 'Duration',
+						type: 'number',
+						description: 'Duration of the tour package'
+					},
+					{
 						type: 'string',
 						name: 'country',
 						required: true,
 						label: 'Country',
-						description: 'Country for this tour',
-						list: true,
-						ui: {
-							component: 'country'
-						}
+						description: 'Country for this tour'
+					},
+					{
+						type: 'string',
+						name: 'city',
+						required: true,
+						label: 'City',
+						description: 'City for this tour'
 					},
 					{
 						type: 'string',

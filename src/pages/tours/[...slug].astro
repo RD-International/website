@@ -2,14 +2,11 @@
 import { type CollectionEntry, getCollection } from 'astro:content'
 import TourListing from '@/layouts/TourListing'
 import Code from '@/components/mdx/Code'
-//import ListRelatedTours from '@/components/ListRelatedTours'
-//
-import Share from '@/components/Share'
-import TableOfContents from '@/components/TableOfContents'
 import { getTours } from '@/utils'
 import SButton from '@/components/mdx/SButton'
 import Disqus from '@/components/Disqus'
 import { disqusConfig } from '@/data/disqus.config'
+import ListRelatedTours from '@/components/ListRelatedTours'
 
 const tours = await getCollection('tours')
 export async function getStaticPaths() {
@@ -25,9 +22,9 @@ type Props = CollectionEntry<'tours'>
 const tour = Astro.props
 const MAX_TOURS = 3
 const getRelatedTours = (tour: Props) => {
-	const lowercaseCountries = tour.data.countries.map((country) => country.toLowerCase())
+	const lowercaseCountry = tour.data.country.toLowerCase()
 	const relatedTours = tours.filter(
-		(p) => p.slug !== tour.slug && p.data.countries.some((t) => lowercaseCountries.includes(t.toLowerCase()))
+		(p) => p.slug !== tour.slug && p.data.country == lowercaseCountry
 	)
 	return relatedTours.slice(0, MAX_TOURS)
 }
@@ -45,15 +42,7 @@ const disqusEnabled = disqusConfig.enabled
 	headings={headings}
 	readTime={remarkPluginFrontmatter.minutesRead}
 >
-	<div class='grid grid-cols-1 md:grid-cols-[20%_auto] gap-10 mt-8'>
-		<!-- aside  -->
-		<aside class='md:flex flex-col gap-8 hidden'>
-			<Share />
-			<div class='sticky top-24 self-start hidden md:block transition-all duration-200'>
-				{headings && headings.length > 0 && <TableOfContents {headings} />}
-			</div>
-		</aside>
-
+	<div>
 		<!-- tour -->
 		<article class='max-w-full w-full'>
 			<div class='prose prose-lg md:prose-xl dark:prose-invert mb-12 min-w-full'>
@@ -63,7 +52,7 @@ const disqusEnabled = disqusConfig.enabled
 			<!-- related tours -->
 			<footer>
 				<h2 class='font-bold text-lg dark:text-white mb-6'>Related Tours</h2>
-				<!--<ListRelatedTours tours={relatedTours} />-->
+				<ListRelatedTours tours={relatedTours} />
 			</footer>
 		</article>
 	</div>

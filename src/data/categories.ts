@@ -1,8 +1,9 @@
 // List of categories for blog tours
 export const CATEGORIES = [
-	'Category 1',
-	'Category 2',
-	'Category 3',
-	'Category 4',
-	'Category 5'
+	'Adventure',
+	'City',
+	'Cultural',
+	'Nature',
+	'Sight Seeing',
+	'Historical'
 ] as const

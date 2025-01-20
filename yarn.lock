@@ -7965,6 +7965,11 @@ lru-cache@^5.1.1:
   dependencies:
     yallist "^3.0.2"
 
+lucide-astro@^0.471.0:
+  version "0.471.0"
+  resolved "https://registry.yarnpkg.com/lucide-astro/-/lucide-astro-0.471.0.tgz#068ab78625d88e2d34276ec5388cf2ad2670ab19"
+  integrity sha512-4dLwQU0opG7X9y/etUCGO8Rwvn/7C/XVdnlfbdpIU3+fAIZPuQRxHppaCLlD+JIsVXvP3sfX1lJ2qn/QKMaOaQ==
+
 lucide-react@^0.424.0:
   version "0.424.0"
   resolved "https://registry.yarnpkg.com/lucide-react/-/lucide-react-0.424.0.tgz#e9dd89a16cbb58f6731ac1cc6e1411d1f7403ca9"

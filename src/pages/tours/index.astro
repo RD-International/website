@@ -2,10 +2,17 @@
 import BaseLayout from '@/layouts/BaseLayout'
 import TitlePage from '@/components/TitlePage'
 import { getTours } from '@/utils'
+import ListTours from '@/components/ListTours'
 const tours = await getTours()
 ---
-<BaseLayout title='tours'>
-	<TitlePage title='tours' />
+
+<BaseLayout title='Our Tours'>
+	<div class='mt-6'></div>
+	<TitlePage title='Our Tours' />
+	<div>
+		<h2 class='text-lg font-medium tracking-wide text-end'>Latest Tours</h2>
+		<ListTours FirstBig={true} tours={tours} />
+	</div>
 	<div class='flex justify-center flex-wrap gap-4'>
 		{
 			tours.map((tour) => (

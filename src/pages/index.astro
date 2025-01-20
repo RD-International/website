@@ -2,42 +2,36 @@
 import ListCategories from '@/components/ListCategories'
 import ListTours from '@/components/ListTours'
 import Hero from '@/components/Hero'
-import PricingSection from '@/components/PricingSection'
-import BentoBox from '@/components/BentoBox'
-import CTA from '@/components/CTA'
 import Description from '@/components/Description'
-import Reviews from '@/components/Reviews'
+import Stats from '@/components/Stats'
 import GetInTouch from '@/components/GetInTouch'
 import TitlePage from '@/components/TitlePage'
 import BaseLayout from '@/layouts/BaseLayout'
 import { getTours } from '@/utils'
-import { siteConfig } from '@/site-config'
+import Reviews from '@/components/Reviews'
+import Waves from '@/components/Waves'
 
 const MAX_TOURS = 5 // max number of tours to show on the home page
 const tours = await getTours(MAX_TOURS)
 ---
 
-<Hero/>
-<!--<BentoBox/>-->
+<Hero />
 
+<Description />
+<Waves />
+<Stats />
 
-  <Description/>
 <BaseLayout title='Home'>
-	<TitlePage title="Tours" />
+	<div class='mt-4'>
+		<TitlePage title='Tours' />
+	</div>
 	<ListCategories />
-
 	<div>
 		<h2 class='text-lg font-medium tracking-wide text-end'>Latest Tours</h2>
 		<ListTours FirstBig={true} tours={tours} />
 	</div>
 </BaseLayout>
-
-  <Reviews/>
-
-  <CTA/>
-  <GetInTouch/>
-
-<PricingSection/>
+<GetInTouch />
 
 <script>
 	import { animate } from 'motion'

@@ -18,5 +18,10 @@ export const siteConfig: SiteConfig = {
 	lang: 'en-GB',
 	ogLocale: 'en_GB',
 	shareMessage: 'Share this tour', // Message to share a tour on social media
-	paginationSize: 6 // Number of tours per page
+	paginationSize: 6, // Number of tours per page
+	customerCount: 120,
+	countryCount: 6,
+	estabilishmentYear: 2001,
+	fiveStarReviews: 45,
+	expensesSaved: 120
 }

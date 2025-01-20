@@ -2,18 +2,30 @@
 import { Image } from 'astro:assets'
 import FormattedDate from '@/components/FormattedDate'
 import ArrowUp from '@/components/icons/ArrowUp'
+import { Clock, Users } from 'lucide-astro'
+import StarReview from './StarReview.astro'
+import Country from './Country.astro'
 
 const {
 	id,
-	data: { title, description, pubDate, heroImage, category },
+	data: {
+		title,
+		description,
+		pubDate,
+		heroImage,
+		category,
+		price,
+		country,
+		duration,
+		minPeopleCount
+	},
 	readTime,
 	slug
 } = Astro.props
 ---
 
 <article class='grid grid-rows-[300px_auto] md:grid-rows-[300px_220px] min-h-full group'>
-  {slug}
-	<a class='relative overflow-hidden' href={`/tour/${slug}/`}>
+	<a class='relative overflow-hidden' href={`/tours/${slug}/`}>
 		<Image
 			src={heroImage}
 			width={600}
@@ -26,12 +38,7 @@ const {
 		<div class='z-30 absolute bottom-0 w-full h-20'>
 			<div class='-z-10 absolute bottom-0 glass w-full min-h-full'></div>
 			<div class='flex items-center justify-between gap-x-1 text-white px-6 py-4'>
-				<div class='flex flex-col gap-1 items-center justify-center'>
-					<FormattedDate date={pubDate} />
-					<span class='text-sm'> {readTime}</span>
-				</div>
-
-				<span class='pb-4'>{category}</span>
+				<span class='text-lg font-bold text-white'>${price}</span>
 			</div>
 		</div>
 	</a>
@@ -52,7 +59,6 @@ const {
 		</div>
 
 		<footer class='flex justify-between items-center'>
-      price, duration, min people, tour type
 			<a
 				href={`/tour/${slug}/`}
 				class='flex justify-center items-center dark:text-white rounded-full hover:translate-x-1 transition-transform duration-150 ease-in-out font-semibold gap-1 group'
@@ -66,4 +72,3 @@ const {
 		</footer>
 	</div>
 </article>
-

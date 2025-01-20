@@ -1,0 +1,29 @@
+---
+import { Star } from 'lucide-astro'
+
+const { rating, reviewCount = 10 } = Astro.props
+const maxRating = 5
+---
+
+<!-- Reviews -->
+<div class='mt-2 mb-2'>
+	<h3 class='sr-only'>Reviews</h3>
+	<div class='flex items-center'>
+		<div class='flex items-center'>
+			<!-- Active: "text-gray-900", Default: "text-gray-200" -->
+			{
+				Array.from({ length: maxRating }).map((_, index) => (
+					<Star
+						class={`w-5 h-5 ${
+							index < rating ? 'fill-teal-500 stroke-teal-500' : 'stroke-teal-500'
+						}`}
+					/>
+				))
+			}
+		</div>
+		<p class='sr-only'>{rating} out of {maxRating} stars</p>
+		<a href='#' class='ml-3 text-sm font-medium text-teal-600 hover:text-teal-500'
+			>{reviewCount} reviews</a
+		>
+	</div>
+</div>

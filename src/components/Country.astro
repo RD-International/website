@@ -6,9 +6,17 @@ const { country } = Astro.props
 ---
 
 <a href={`/countries/${encodeURIComponent(country.toLowerCase())}`} aria-label={country}>
-	<span
-		class='bg-indigo-600 font-semibold text-white dark:bg-indigo-900 dark:text-white shadow text-sm w-fit px-2 py-1 md:px-5 md:py-2 rounded-full'
-	>
+<span class="inline-flex items-center gap-x-1.5 rounded-md px-2 py-1 text-xs font-medium text-gray-900 ring-1 ring-gray-200 ring-inset">
+  <svg class="size-1.5 fill-red-500" viewBox="0 0 6 6" aria-hidden="true">
+    <circle cx="3" cy="3" r="3" />
+  </svg>
+<img
+  src="https://flagcdn.com/16x12/ua.png"
+  srcset="https://flagcdn.com/32x24/ua.png 2x,
+    https://flagcdn.com/48x36/ua.png 3x"
+  width="16"
+  height="12"
+  alt={country}>
 		{country ?? 'Blog Country'}
-	</span>
+</span>
 </a>
