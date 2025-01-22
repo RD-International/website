@@ -23,84 +23,133 @@ const { title, description, pubDate, heroImage, country, price, minPeopleCount, 
 const articleDate = pubDate.toISOString()
 ---
 
-<div class='w-screen bg-black'>
-	{
-		heroImage && (
-			<Image
-				src={heroImage}
-				format='jpg'
-				loading='eager'
-				class='rounded-t w-full  object-cover'
-				alt={`img of ${title}`}
-			/>
-		)
-	}
-
-	<div class='bg-gradient-to-b from-teal-900/0 to-teal-950/80 h-60 -mt-60 relative'></div>
-</div>
-
-<div class='px-2 -mt-[16rem] px-4 mx-auto px-40 relative z-10'>
-	<h1 class='text-left text-4xl md:text-6xl md:pb-2.5 font-semibold py-1 text-white'>
-		{title}
-	</h1>
-	<p class='text-white w-2/3'>
-		{description}
-	</p>
-</div>
-<hr />
-
-<BaseLayout
-	title={title}
-	description={description}
-	image={heroImage?.src}
-	articleDate={articleDate}
->
-	<div class='bg-white relative z-20 shadow-lg'>
-		<div class='pt-6'>
-			<!-- Product info -->
+<div class='w-screen'>
+	<div class='relative isolate overflow-hidden'>
+		<div>
+			{
+				heroImage && (
+					<Image
+						src={heroImage}
+						format='jpg'
+						loading='eager'
+						class='absolute inset-0 h-full -z-10 object-cover'
+						alt={`img of ${title}`}
+					/>
+				)
+			}
+		</div>
+		<div
+			class='absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80'
+			aria-hidden='true'
+		>
 			<div
-				class='mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-4'
+				class='relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-emerald-400 to-emerald-800 opacity-20 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]'
+				style='clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)'
 			>
-				<div class='lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8'>
-					<article>
-						<div>
-							<slot />
+			</div>
+		</div>
+		<div class='mx-auto max-w-7xl px-6 lg:px-8 mt-20 bg-gradient-to-b from-transparent to-teal-950'>
+			<div class='mx-auto max-w-2xl py-32 sm:py-48 lg:py-56'>
+				<div class='hidden sm:mb-8 sm:flex sm:justify-center'>
+					<div
+						class='relative rounded-full px-3 py-1 text-sm/6 text-gray-200 ring-1 ring-white/10 hover:ring-white/20 bg-slate-900/60'
+					>
+						<div class='flex items-center gap-4'>
+							<p class='text-xl tracking-tight text-teal-400 font-bold'>${price}</p>
+
+							<div class='flex items-center gap-1'>
+								<Users class='w-4' />
+								<p class='text-xl tracking-tight text-slate-200 font-bold'>
+									{minPeopleCount}
+								</p>
+							</div>
+
+							<div class='flex items-center gap-1'>
+								<Clock class='w-4' />
+								<p class='text-xl tracking-tight text-slate-200 font-bold'>
+									{duration}hrs
+								</p>
+							</div>
 						</div>
-					</article>
+					</div>
 				</div>
-
-				<!-- Options -->
-				<div class='mt-4 lg:row-span-3 lg:mt-0'>
-					<h2 class='sr-only'>Product information</h2>
-					<div class='flex items-center gap-4'>
-						<p class='text-3xl tracking-tight text-teal-600 font-bold'>${price}</p>
-
-						<div class='flex items-center gap-1'>
-							<Users />
-							<p class='text-3xl tracking-tight text-slate-800 font-bold'>
-								{minPeopleCount}
-							</p>
-						</div>
-
-						<div class='flex items-center gap-1'>
-							<Clock />
-							<p class='text-3xl tracking-tight text-slate-800 font-bold'>
-								{duration}hrs
-							</p>
-						</div>
-					</div>
-
-					<StarReview rating={4} reviewCount={20} />
-
-					<div class='flex items-center gap-2 mt-2 mb-2'>
-						<Country country={country} />
-					</div>
-					<hr class='my-4' />
-					<BookTourForm />
+				<div class='text-center'>
+					<h1 class='text-white text-balance text-5xl font-semibold tracking-tight sm:text-7xl'>
+						{title}
+					</h1>
+					<p class='mt-8 text-pretty text-md text-teal-50 sm:text-xl/8'>
+						{description}
+					</p>
 				</div>
 			</div>
 		</div>
+		<div
+			class='absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]'
+			aria-hidden='true'
+		>
+			<div
+				class='relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-emerald-800 to-emerald-400 opacity-20 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]'
+				style='clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)'
+			>
+			</div>
+		</div>
 	</div>
-</BaseLayout>
 
-<script></script>
+	<div class='-mt-52 sm:-mt-64'>
+		<BaseLayout
+			title={title}
+			description={description}
+			image={heroImage?.src}
+			articleDate={articleDate}
+		>
+			<div class='bg-white relative z-20 shadow-lg'>
+				<div>
+					<!-- Product info -->
+					<div
+						class='mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-4'
+					>
+						<div class='lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8'>
+							<article>
+								<div>
+									<slot />
+								</div>
+							</article>
+						</div>
+
+						<!-- Options -->
+						<div class='mt-4 lg:row-span-3 lg:mt-0'>
+							<h2 class='sr-only'>Product information</h2>
+							<div class='flex items-center gap-4'>
+								<p class='text-3xl tracking-tight text-teal-600 font-bold'>${price}</p>
+
+								<div class='flex items-center gap-1'>
+									<Users />
+									<p class='text-3xl tracking-tight text-slate-800 font-bold'>
+										{minPeopleCount}
+									</p>
+								</div>
+
+								<div class='flex items-center gap-1'>
+									<Clock />
+									<p class='text-3xl tracking-tight text-slate-800 font-bold'>
+										{duration}hrs
+									</p>
+								</div>
+							</div>
+
+							<StarReview rating={4} reviewCount={20} />
+
+							<div class='flex items-center gap-2 mt-2 mb-2'>
+								<Country country={country} />
+							</div>
+							<hr class='my-4' />
+							<BookTourForm />
+						</div>
+					</div>
+				</div>
+			</div>
+		</BaseLayout>
+	</div>
+
+	<script></script>
+</div>

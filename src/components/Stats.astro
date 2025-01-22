@@ -1,33 +1,53 @@
 ---
 import { siteConfig } from '@/site-config'
+import IslandImage from '@/assets/images/1.jpg'
 ---
-<div class="relative bg-white">
-  <img class="h-56 w-full bg-gray-50 object-cover lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-1/2" src="/src/assets/images/1.jpg" alt="">
-  <div class="mx-auto grid max-w-7xl lg:grid-cols-2">
-    <div class="px-6 pb-24 pt-16 sm:pb-32 sm:pt-20 lg:col-start-2 lg:px-8 lg:pt-32">
-      <div class="mx-auto max-w-2xl lg:mr-0 lg:max-w-lg">
-        <h2 class="text-base/8 font-semibold text-indigo-600">Our track record</h2>
-        <p class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Tailored Muslim-friendly Tours since {siteConfig.estabilishmentYear}</p>
-        <p class="mt-6 text-lg/8 text-gray-600">We aspire to be a global leader in halal-friendly travel,  inspiring Muslim travelers with exceptional services that reflect Islamic values, ensuring trust, comfort, and unforgettable experiences.</p>
-        <dl class="mt-16 grid max-w-xl grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 xl:mt-16">
-          <div class="flex flex-col gap-y-3 border-l border-gray-900/10 pl-6">
-            <dt class="text-sm/6 text-gray-600">Tourists that went on our tours</dt>
-            <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">{siteConfig.customerCount > 100 ? '100+':siteConfig.customerCount}</dd>
-          </div>
-          <div class="flex flex-col gap-y-3 border-l border-gray-900/10 pl-6">
-            <dt class="text-sm/6 text-gray-600">Countries Toured</dt>
-            <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">{siteConfig.countryCount}</dd>
-          </div>
-          <div class="flex flex-col gap-y-3 border-l border-gray-900/10 pl-6">
-            <dt class="text-sm/6 text-gray-600">5 Star Reviews</dt>
-            <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">{siteConfig.fiveStarReviews}</dd>
-          </div>
-          <div class="flex flex-col gap-y-3 border-l border-gray-900/10 pl-6">
-            <dt class="text-sm/6 text-gray-600">In Expenses Saved*</dt>
-            <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">${siteConfig.expensesSaved}</dd>
-          </div>
-        </dl>
-      </div>
-    </div>
-  </div>
+
+<div class='relative bg-white pt-10'>
+	<img
+		class='h-56 w-full bg-gray-50 object-cover lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-1/2'
+		src={IslandImage.src}
+		alt=''
+	/>
+	<div class='mx-auto grid max-w-7xl lg:grid-cols-2'>
+		<div class='px-6 pb-24 pt-16 sm:pb-32 sm:pt-20 lg:col-start-2 lg:px-8 lg:pt-32'>
+			<div class='mx-auto max-w-2xl lg:mr-0 lg:max-w-lg'>
+				<h2 class='text-base/8 font-semibold text-indigo-600'>Our track record</h2>
+				<p class='mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl'>
+					Tailored Muslim-friendly Tours since {siteConfig.estabilishmentYear}
+				</p>
+				<p class='mt-6 text-lg/8 text-gray-600'>
+					We aspire to be a global leader in halal-friendly travel, inspiring Muslim travelers with
+					exceptional services that reflect Islamic values, ensuring trust, comfort, and
+					unforgettable experiences.
+				</p>
+				<dl class='mt-16 grid max-w-xl grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 xl:mt-16'>
+					<div class='flex flex-col gap-y-3 border-l border-gray-900/10 pl-6'>
+						<dt class='text-sm/6 text-gray-600'>Tourists that went on our tours</dt>
+						<dd class='order-first text-3xl font-semibold tracking-tight text-gray-900'>
+							{siteConfig.customerCount > 100 ? '100+' : siteConfig.customerCount}
+						</dd>
+					</div>
+					<div class='flex flex-col gap-y-3 border-l border-gray-900/10 pl-6'>
+						<dt class='text-sm/6 text-gray-600'>Countries Toured</dt>
+						<dd class='order-first text-3xl font-semibold tracking-tight text-gray-900'>
+							{siteConfig.countryCount}
+						</dd>
+					</div>
+					<div class='flex flex-col gap-y-3 border-l border-gray-900/10 pl-6'>
+						<dt class='text-sm/6 text-gray-600'>5 Star Reviews</dt>
+						<dd class='order-first text-3xl font-semibold tracking-tight text-gray-900'>
+							{siteConfig.fiveStarReviews}
+						</dd>
+					</div>
+					<div class='flex flex-col gap-y-3 border-l border-gray-900/10 pl-6'>
+						<dt class='text-sm/6 text-gray-600'>In Expenses Saved*</dt>
+						<dd class='order-first text-3xl font-semibold tracking-tight text-gray-900'>
+							${siteConfig.expensesSaved}
+						</dd>
+					</div>
+				</dl>
+			</div>
+		</div>
+	</div>
 </div>

@@ -1,4 +1,4 @@
-<section class='relative w-full bg-teal-400/30'>
+<section class='relative w-full h-screen bg-teal-400/30'>
 	<div class='wave' id='wave1' style='--i: 1;'></div>
 	<div class='wave' id='wave2' style='--i: 2;'></div>
 	<div class='wave' id='wave3' style='--i: 3;'></div>
@@ -20,6 +20,7 @@
 	})
 </script>
 <style>
+	@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 	* {
 		margin: 0;
 		padding: 0;
@@ -32,11 +33,8 @@
 		left: 0;
 		width: 100%;
 		height: 100px;
-		background: url(/src/assets/images/wave.svg);
-		background-size: 990px 100px;
-
-		/*background: url(/src/assets/images/wave.png);*/
-		/*background-size: 1000px 100px;*/
+		background: url(/src/assets/images/wave.png);
+		background-size: 1000px 100px;
 		animation: animate 4s ease-in-out infinite;
 		animation-delay: calc(var(--i) * 0.25s);
 	}

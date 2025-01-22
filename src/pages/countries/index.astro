@@ -4,11 +4,12 @@ import TitlePage from '@/components/TitlePage'
 import { getCountries } from '@/utils'
 import Country from '@/components/Country'
 const countries = await getCountries()
+import Image from '/src/assets/images/5.jpg'
 ---
 
 <BaseLayout title='Countries we Tour'>
 	<div class='mt-10'></div>
-	<img src='/src/assets/images/5.jpg' class='w-full h-full opacity-80 rounded-t' />
+	<img src={Image.src} class='w-full h-full opacity-80 rounded-t' />
 	<TitlePage title='Countries we Tour' />
 	<div class='flex justify-center flex-wrap gap-4'>
 		{countries.map((country) => <Country country={country} />)}

@@ -1,6 +1,6 @@
 ---
 import { siteConfig } from '@/site-config'
-import PromotionalVideo from '/src/assets/videos/promotional.mp4'
+import PromotionalVideo from '@/assets/videos/promotional.mp4'
 ---
 
 <div class='bg-gray-900'>
@@ -11,7 +11,7 @@ import PromotionalVideo from '/src/assets/videos/promotional.mp4'
 				autoplay
 				muted
 				loop
-				class='absolute inset-0 -z-10 size-full object-cover'></video>
+				class='absolute inset-0 h-full -z-10 object-cover'></video>
 		</div>
 		<div
 			class='absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80'
@@ -23,7 +23,7 @@ import PromotionalVideo from '/src/assets/videos/promotional.mp4'
 			>
 			</div>
 		</div>
-		<div class='mx-auto max-w-7xl px-6 lg:px-8'>
+		<div class='mx-auto max-w-7xl px-6 lg:px-8 bg-gradient-to-b from-transparent'>
 			<div class='mx-auto max-w-2xl py-32 sm:py-48 lg:py-56'>
 				<div class='hidden sm:mb-8 sm:flex sm:justify-center'>
 					<div
@@ -50,7 +50,7 @@ import PromotionalVideo from '/src/assets/videos/promotional.mp4'
 					</p>
 					<div class='mt-10 flex items-center justify-center gap-x-6'>
 						<a
-							href='#'
+							href='/tours'
 							class='rounded-md bg-emerald-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400'
 							>Browse our tours</a
 						>

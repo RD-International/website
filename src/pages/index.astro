@@ -8,7 +8,6 @@ import GetInTouch from '@/components/GetInTouch'
 import TitlePage from '@/components/TitlePage'
 import BaseLayout from '@/layouts/BaseLayout'
 import { getTours } from '@/utils'
-import Reviews from '@/components/Reviews'
 import Waves from '@/components/Waves'
 
 const MAX_TOURS = 5 // max number of tours to show on the home page
@@ -22,7 +21,7 @@ const tours = await getTours(MAX_TOURS)
 <Stats />
 
 <BaseLayout title='Home'>
-	<div class='mt-4'>
+	<div>
 		<TitlePage title='Tours' />
 	</div>
 	<ListCategories />
