@@ -7,15 +7,15 @@ import Stats from '@/components/Stats'
 import GetInTouch from '@/components/GetInTouch'
 import TitlePage from '@/components/TitlePage'
 import BaseLayout from '@/layouts/BaseLayout'
-import { getTours } from '@/utils'
+import { getTours, getFeaturedTours } from '@/utils'
 import Waves from '@/components/Waves'
 
 const MAX_TOURS = 5 // max number of tours to show on the home page
 const tours = await getTours(MAX_TOURS)
+const featuredTours = await getFeaturedTours()
 ---
 
-<Hero />
-
+<Hero featured={featuredTours} />
 <Description />
 <Waves />
 <Stats />

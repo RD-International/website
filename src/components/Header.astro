@@ -3,6 +3,7 @@ import { siteConfig } from '@/site-config'
 import Logo from '@/assets/images/logo.png'
 import { SignedIn, SignedOut, UserButton, SignInButton } from '@clerk/astro/components'
 import { Menu } from 'lucide-astro'
+import { Image } from 'astro:assets'
 
 export const prerender = false
 
@@ -34,7 +35,7 @@ const links = [
 		<div class='flex lg:flex-1'>
 			<a href='/' class='-m-1.5 p-1.5'>
 				<span class='sr-only'>{siteConfig.agency}</span>
-				<img class='h-16 w-auto' src={Logo.src} alt='' />
+				<Image class='h-16 w-auto' src={Logo} alt='' />
 			</a>
 		</div>
 		<div class='flex lg:hidden'>
@@ -81,14 +82,14 @@ const links = [
 			<button
 				onclick='document.querySelector("dialog").showModal()'
 				type='button'
-				class='rounded bg-white/10 px-2 text-sm font-semibold text-white shadow-sm hover:bg-white/20 py-2'
+				class='rounded bg-white/20 px-2 text-sm font-semibold text-white shadow-sm hover:bg-white/20 py-2 lg:hidden'
 			>
 				<Menu />
 			</button>
 		</div>
 	</nav>
 	<!-- Mobile menu, show/hide based on menu open state. -->
-	<dialog class='sm:hidden' role='dialog' id='headerDialog' aria-modal='true'>
+	<dialog class='lg:hidden' role='dialog' id='headerDialog' aria-modal='true'>
 		<!-- Background backdrop, show/hide based on slide-over state. -->
 		<div class='fixed inset-0 z-50'></div>
 		<div
@@ -97,7 +98,7 @@ const links = [
 			<div class='flex items-center justify-between'>
 				<a href='/' class='-m-1.5 p-1.5'>
 					<span class='sr-only'>{siteConfig.agency}</span>
-					<img class='h-8 w-auto' src={Logo.src} alt='' />
+					<Image class='h-8 w-auto' src={Logo} alt='' />
 				</a>
 				<button
 					type='button'

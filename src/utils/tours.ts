@@ -36,3 +36,8 @@ export const filterToursByCategory = async (category: string) => {
 		.filter((tour) => !tour.data.draft)
 		.filter((tour) => tour.data.category.toLowerCase() === category)
 }
+
+export const getFeaturedTours = async () => {
+	const tours = await getTours()
+	return await tours.filter((tour) => !tour.data.draft).filter((tour) => tour.data.featured)
+}

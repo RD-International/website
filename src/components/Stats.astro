@@ -1,12 +1,13 @@
 ---
 import { siteConfig } from '@/site-config'
 import IslandImage from '@/assets/images/1.jpg'
+import { Image } from 'astro:assets'
 ---
 
 <div class='relative bg-white pt-10'>
-	<img
+	<Image
 		class='h-56 w-full bg-gray-50 object-cover lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-1/2'
-		src={IslandImage.src}
+		src={IslandImage}
 		alt=''
 	/>
 	<div class='mx-auto grid max-w-7xl lg:grid-cols-2'>

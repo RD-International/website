@@ -4,6 +4,7 @@ export interface Props {
 	country: string
 }
 const { country } = Astro.props
+import { Image } from 'astro:assets'
 const code = CountryCodes[country as keyof typeof CountryCodes] || 'mv'
 ---
 
@@ -11,7 +12,7 @@ const code = CountryCodes[country as keyof typeof CountryCodes] || 'mv'
 	<span
 		class='inline-flex items-center gap-x-1.5 rounded-md px-2 py-1 text-xs font-medium text-teal-800 border border-slate-300 ring-inset bg-white/80'
 	>
-		<img
+		<Image
 			src={`https://flagcdn.com/w20/${code}.png`}
 			srcset={`https://flagcdn.com/w20/${code}.png 2x,https://flagcdn.com/48x36/${code}.png 3x`}
 			width='16'

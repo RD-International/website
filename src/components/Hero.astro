@@ -1,10 +1,11 @@
 ---
 import { siteConfig } from '@/site-config'
 import PromotionalVideo from '@/assets/videos/promotional.mp4'
+const { featured } = Astro.props
 ---
 
 <div class='bg-gray-900'>
-	<div class='relative isolate overflow-hidden pt-10'>
+	<div class='relative isolate overflow-hidden pt-32 sm:pt-10'>
 		<div>
 			<video
 				src={PromotionalVideo}
@@ -30,8 +31,8 @@ import PromotionalVideo from '@/assets/videos/promotional.mp4'
 						class='relative rounded-full px-3 py-1 text-sm/6 text-gray-200 ring-1 ring-white/10 hover:ring-white/20 bg-slate-900/30'
 					>
 						Announcing our latest
-						<span class='font-bold text-emerald-400'> Langkawi Tours</span>
-						<a href='#' class='font-semibold text-white'
+						<span class='font-bold text-emerald-400'> {featured[0].data.title} Tour</span>
+						<a href={`/tours/${featured[0].slug}`} class='font-semibold text-white'
 							><span class='absolute inset-0' aria-hidden='true'></span>Learn more <span
 								aria-hidden='true'>&rarr;</span
 							></a
@@ -54,7 +55,7 @@ import PromotionalVideo from '@/assets/videos/promotional.mp4'
 							class='rounded-md bg-emerald-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400'
 							>Browse our tours</a
 						>
-						<a href='#' class='text-sm/6 font-semibold text-white'
+						<a href='/about' class='text-sm/6 font-semibold text-white'
 							>Learn more <span aria-hidden='true'>&rarr;</span></a
 						>
 					</div>

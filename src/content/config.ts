@@ -30,7 +30,8 @@ const tours = defineCollection({
 			minPeopleCount: z.number(),
 			duration: z.number(),
 			country: reference('countries'),
-			city: z.string()
+			city: z.string(),
+			featured: z.boolean().default(false)
 		})
 })
 

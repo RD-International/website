@@ -14,6 +14,9 @@
 - [ ] Fix Get in Touch Section
 - [ ] Web3Forms for Contact Forms
 - [ ] Redo README
-- [ ] Remove unneeded package
+- [x] Remove unneeded package
 - [ ] Setup organization
 - [ ] Fix hosting issues
+- [x] Make langkwai thing optional
+- [x] Hide dialog at medium breakpoints
+- [ ] Astro Optimizations
