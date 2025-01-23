@@ -2,16 +2,16 @@
 import BaseLayout from '@/layouts/BaseLayout'
 import TitlePage from '@/components/TitlePage'
 import { getCountries } from '@/utils'
-import Country from '@/components/Country'
+import Globe from '@/components/Globe'
+import CountryCard from '@/components/CountryCard'
+
 const countries = await getCountries()
-import Image from '/src/assets/images/5.jpg'
 ---
 
 <BaseLayout title='Countries we Tour'>
-	<div class='mt-10'></div>
-	<img src={Image.src} class='w-full h-full opacity-80 rounded-t' />
 	<TitlePage title='Countries we Tour' />
-	<div class='flex justify-center flex-wrap gap-4'>
-		{countries.map((country) => <Country country={country} />)}
+	<Globe />
+	<div class='grid grid-cols-2 sm:grid-cols-3'>
+		{countries.map((country) => <CountryCard country={country} />)}
 	</div>
 </BaseLayout>

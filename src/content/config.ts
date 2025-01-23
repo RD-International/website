@@ -1,5 +1,17 @@
-import { defineCollection, z } from 'astro:content'
+import { defineCollection, reference, z } from 'astro:content'
 import { CATEGORIES } from '@/data/categories'
+
+const countries = defineCollection({
+	// Type-check frontmatter using a schema
+	schema: ({ image }) =>
+		z.object({
+			name: z.string().max(80),
+			description: z.string(),
+			// Transform string to Date object
+			coverImage: image(),
+			cities: z.string().array()
+		})
+})
 
 const tours = defineCollection({
 	// Type-check frontmatter using a schema
@@ -14,13 +26,12 @@ const tours = defineCollection({
 				.transform((val) => new Date(val)),
 			heroImage: image(),
 			category: z.enum(CATEGORIES),
-			country: z.string(),
-			city: z.string(),
 			draft: z.boolean().default(false),
 			price: z.number(),
 			minPeopleCount: z.number(),
-			duration: z.number()
+			duration: z.number(),
+			city: reference('cities')
 		})
 })
 
-export const collections = { tours }
+export const collections = { tours, countries }

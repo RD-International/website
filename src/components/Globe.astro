@@ -1,0 +1,34 @@
+---
+import World from '@/assets/images/world.svg?raw'
+---
+
+<div>
+	<div
+		class='w-full [&>svg>path]:text-teal-50 [&>svg>path.available]:text-teal-400 hover:[&>svg>path.available]:text-teal-200'
+		id='globeDiv'
+	>
+		<Fragment set:html={World} />
+	</div>
+</div>
+<script>
+	const svg = document.getElementById('globeDiv')
+	console.log(svg)
+
+	window.addEventListener('DOMContentLoaded', () => {
+		const availableCountries = ['Maldives', 'China']
+		document.querySelectorAll('path').forEach((p) => {
+			const country = p.attributes.getNamedItem('name')?.nodeValue
+			if (availableCountries.includes(country)) {
+				p.classList.add('available')
+			}
+		})
+	})
+
+	svg.addEventListener('click', (event) => {
+		if (!(event.target instanceof SVGPathElement)) return
+		const path = event.target as SVGPathElement
+		const country = path.attributes.getNamedItem('name')?.nodeValue
+		const code = path.attributes.getNamedItem('id')?.nodeValue
+		console.log(country, code)
+	})
+</script>

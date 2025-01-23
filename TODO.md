@@ -1,14 +1,16 @@
 - [ ] About Page with Google Maps and Social Link (Web3Forms)
 - [ ] Add Husky
 - [ ] Add tsc in package.json
-- [ ] Fix Drawer
+- [x] Fix Drawer
 - [ ] Finalize Tina CMS
 - [ ] Flesh out country page + add country card
 - [ ] Add specific page for each city
 - [ ] navigation Links: home, about us, tours, contact
 - [ ] put all countries under tours
 - [ ] put all countries under tours
-- [ ] video covers the whole page on small breakpoints
-- [ ] fix the text on small breakpoints
-- [ ] fix the text on small breakpints
-- [ ] host on github pages
+- [x] video covers the whole page on small breakpoints
+- [x] fix the text on small breakpints
+- [x] host on github pages
+- [ ] Fix Get in Touch Section
+- [ ] Web3Forms for Contact Forms
+- [ ] Redo README

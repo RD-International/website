@@ -23,5 +23,9 @@ export const siteConfig: SiteConfig = {
 	countryCount: 6,
 	estabilishmentYear: 2001,
 	fiveStarReviews: 45,
-	expensesSaved: 120
+	expensesSaved: 120,
+	firstLineAddress: 'Mavis Island',
+	secondLineAddress: 'Chicago, IL, 99191',
+	phoneNumber: '+1 (555) 234-5678',
+	email: 'hello@example.com'
 }

@@ -22,6 +22,47 @@ export default defineConfig({
 	schema: {
 		collections: [
 			{
+				name: 'countries',
+				label: 'Countries',
+				path: 'src/content/countries',
+				format: 'mdx',
+				fields: [
+					{
+						name: 'name',
+						type: 'string',
+						label: 'Name',
+						required: true,
+						description: 'Name of the country'
+					},
+
+					{
+						name: 'description',
+						type: 'string',
+						label: 'Description',
+						required: true,
+						description: 'Description of the country'
+					},
+
+					{
+						name: 'coverImage',
+						type: 'image',
+						label: 'Cover Image',
+						required: true,
+						description: 'Cover Image of the Country'
+					},
+
+					{
+						name: 'cities',
+						type: 'string',
+						list: true,
+						label: 'Cities',
+						required: true,
+						description: 'Cities in this Country'
+					}
+				]
+			},
+
+			{
 				name: 'tour',
 				label: 'Tour',
 				path: 'src/content/tours',
@@ -83,11 +124,12 @@ export default defineConfig({
 						description: 'Duration of the tour package'
 					},
 					{
-						type: 'string',
-						name: 'country',
-						required: true,
 						label: 'Country',
-						description: 'Country for this tour'
+						name: 'country',
+						type: 'reference',
+						collections: ['countries'],
+						description: 'Country for this tour',
+						required: true
 					},
 					{
 						type: 'string',
