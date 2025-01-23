@@ -8,8 +8,7 @@ const countries = defineCollection({
 			name: z.string().max(80),
 			description: z.string(),
 			// Transform string to Date object
-			coverImage: image(),
-			cities: z.string().array()
+			coverImage: image()
 		})
 })
 
@@ -30,7 +29,8 @@ const tours = defineCollection({
 			price: z.number(),
 			minPeopleCount: z.number(),
 			duration: z.number(),
-			city: reference('cities')
+			country: reference('countries'),
+			city: z.string()
 		})
 })
 

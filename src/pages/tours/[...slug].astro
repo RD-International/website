@@ -22,7 +22,8 @@ type Props = CollectionEntry<'tours'>
 const tour = Astro.props
 const MAX_TOURS = 3
 const getRelatedTours = (tour: Props) => {
-	const lowercaseCountry = tour.data.country.toLowerCase()
+	//FIXME: Replace this
+	const lowercaseCountry = tour.data.country
 	const relatedTours = tours.filter(
 		(p) => p.slug !== tour.slug && p.data.country == lowercaseCountry
 	)

@@ -2,7 +2,6 @@
 	"extends": "astro/tsconfigs/strict",
 	"compilerOptions": {
 		"strictNullChecks": true,
-		"allowJs": true, // required, and included with all Astro templates
 		"baseUrl": ".",
 		"verbatimModuleSyntax": true,
 		"paths": {

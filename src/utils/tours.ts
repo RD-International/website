@@ -1,5 +1,5 @@
 import { CATEGORIES } from '@/data/categories'
-import { getCollection, type CollectionEntry } from 'astro:content'
+import { getCollection, getEntry, type CollectionEntry } from 'astro:content'
 import type { Tour } from 'tina/__generated__/types'
 
 export const getTours = async (max?: number) => {
@@ -23,10 +23,10 @@ export const getCategories = async () => {
 export const getTourByCountry = async (country: string) => {
 	const tours = await getTours()
 	const lowercaseCountry = country.toLowerCase()
-	return tours
+	return await tours
 		.filter((tour) => !tour.data.draft)
 		.filter((tour) => {
-			return tour.data.country.toLowerCase() === lowercaseCountry
+			return tour.data.country.slug.toLowerCase() == lowercaseCountry
 		})
 }
 

@@ -8,14 +8,14 @@ export async function getStaticPaths() {
 	const countries = await getCountries()
 
 	return countries.map((country) => ({
-		params: { country },
-		props: { country }
+		params: { country: country.slug },
+		props: { country: country.slug }
 	}))
 }
 
 const { country } = Astro.props
 
-const tours = await getTourByCountry(country)
+const tours = Object.groupBy(await getTourByCountry(country), (tour) => tour.data.city)
 const cities = await getCitiesByCountry(country)
 ---
 
@@ -25,9 +25,9 @@ const cities = await getCitiesByCountry(country)
 		cities.map((city) => (
 			<div>
 				<div class='border-b border-gray-200 pb-5'>
-					<h3 class='text-base font-semibold text-gray-900'>{city}</h3>
+					<h3 class='text-xl font-semibold text-gray-900'>{city}</h3>
 				</div>
-				<ListTours tours={tours} />
+				<ListTours tours={tours[city]} />
 			</div>
 		))
 	}

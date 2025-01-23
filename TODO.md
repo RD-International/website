@@ -14,3 +14,6 @@
 - [ ] Fix Get in Touch Section
 - [ ] Web3Forms for Contact Forms
 - [ ] Redo README
+- [ ] Remove unneeded package
+- [ ] Setup organization
+- [ ] Fix hosting issues

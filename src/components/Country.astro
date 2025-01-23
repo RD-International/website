@@ -7,7 +7,7 @@ const { country } = Astro.props
 const code = CountryCodes[country as keyof typeof CountryCodes] || 'mv'
 ---
 
-<a href={`/countries/${encodeURIComponent(country.toLowerCase())}`} aria-label={country}>
+<a href={`/countries/${encodeURIComponent('country')}`}>
 	<span
 		class='inline-flex items-center gap-x-1.5 rounded-md px-2 py-1 text-xs font-medium text-teal-800 border border-slate-300 ring-inset bg-white/80'
 	>

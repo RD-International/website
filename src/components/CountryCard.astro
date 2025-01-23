@@ -13,7 +13,7 @@ import Country from './Country.astro'
 
 const {
 	id,
-	data: { name },
+	data: { name, description, coverImage },
 	readTime,
 	slug
 } = Astro.props
@@ -22,24 +22,24 @@ const {
 <article
 	class='grid grid-rows-[300px_auto] md:grid-rows-[300px_220px] min-h-full group border rounded-md relative'
 >
-	<a class='relative overflow-hidden' href={`/tours/${country}/`}>
+	<a class='relative overflow-hidden' href={`/countries/${slug}/`}>
 		<Image
-			src={Cover}
+			src={coverImage}
 			format='webp'
 			class='h-full min-w-full object-cover hover:scale-[101%] transition-all duration-200 rounded-t'
-			alt={`img of ${country}`}
+			alt={`img of ${name}`}
 		/>
 	</a>
 
 	<div class='flex justify-between flex-col gap-4 md:gap-0 pl-1'>
 		<footer class='flex justify-between items-center px-2 py-2 pb-3'>
 			<h1 class='font-bold text-xl text-teal-500 capitalize'>
-				{country}
+				{name}
 			</h1>
 			<a
-				href={`/countries/${country}/`}
+				href={`/countries/${slug}/`}
 				class='flex items-center gap-2 rounded-md bg-teal-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600'
-				aria-label={`go to ${country}`}
+				aria-label={`go to ${name}`}
 			>
 				Browse Cities <span
 					class='mt-[1px] group-hover:rotate-45 transition-transform duration-250 ease-in-out'

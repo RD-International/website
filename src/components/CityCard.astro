@@ -1,0 +1,111 @@
+---
+import { Image } from 'astro:assets'
+import FormattedDate from '@/components/FormattedDate'
+import ArrowUp from '@/components/icons/ArrowUp'
+import { Clock, DollarSign, Hourglass, User, Users } from 'lucide-astro'
+import StarReview from './StarReview.astro'
+import Country from './Country.astro'
+
+const {
+	id,
+	data: {
+		title,
+		description,
+		pubDate,
+		heroImage,
+		category,
+		price,
+		country,
+		duration,
+		minPeopleCount,
+		city
+	},
+	readTime,
+	slug
+} = Astro.props
+---
+
+<article
+	class='grid grid-rows-[300px_auto] md:grid-rows-[300px_220px] min-h-full group border rounded-md relative'
+>
+	<div class='flex justify-end w-full items-center absolute top-0 py-1 px-1 z-20 left-0'>
+		<Country country={country} />
+	</div>
+	<a class='relative overflow-hidden' href={`/tours/${slug}/`}>
+		<Image
+			src={heroImage}
+			width={600}
+			height={200}
+			format='webp'
+			class='h-full min-w-full object-cover hover:scale-[101%] transition-all duration-200 rounded-t'
+			alt={`img of ${title}`}
+		/>
+
+		<div class='z-30 absolute bottom-0 w-full h-14'>
+			<div class='-z-10 absolute bottom-0 glass w-full min-h-full'></div>
+			<div class='flex items-center justify-between gap-x-1 text-white px-3 h-full'>
+				<div class='font-sans text-teal-100 flex items-baseline font-bold'>
+					<DollarSign class='w-5' />
+					<span class='text-3xl'>
+						{price}
+					</span>
+					<article
+						class='grid grid-rows-[300px_auto] md:grid-rows-[300px_220px] min-h-full group border rounded-md relative'
+					>
+						<div class='flex justify-end w-full items-center absolute top-0 py-1 px-1 z-20 left-0'>
+							<Country country={country} />
+						</div>
+						<a class='relative overflow-hidden' href={`/tours/${slug}/`}>
+							<Image
+								src={heroImage}
+								width={600}
+								height={200}
+								format='webp'
+								class='h-full min-w-full object-cover hover:scale-[101%] transition-all duration-200 rounded-t'
+								alt={`img of ${title}`}
+							/>
+
+							<div class='z-30 absolute bottom-0 w-full h-14'>
+								<div class='-z-10 absolute bottom-0 glass w-full min-h-full'></div>
+								<div class='flex items-center justify-between gap-x-1 text-white px-3 h-full'>
+									<div class='font-sans text-teal-100 flex items-baseline font-bold'>
+										<DollarSign class='w-5' />
+										<span class='text-3xl'>
+											{price}
+										</span>
+
+										<span class='text-xl'> .00</span>
+									</div>
+									<div class='flex items-center gap-2'>
+										<span
+											class='inline-flex gap-1 items-center rounded-md bg-teal-400/50 px-2 py-1 text-md font-medium text-teal-200 ring-1 ring-inset ring-teal-400/20'
+										>
+											{duration}
+											<Hourglass class='w-4' />
+										</span>
+
+										<span
+											class='inline-flex gap-1 items-center rounded-md bg-teal-400/50 px-2 py-1 text-md font-medium text-teal-200 ring-1 ring-inset ring-teal-400/20'
+										>
+											{minPeopleCount}
+											<User class='w-4' />
+										</span>
+									</div>
+								</div>
+							</div>
+						</a>
+
+						<div class='flex justify-between flex-col gap-4 md:gap-0 py-4 pl-1'>
+							<div class='flex flex-col gap-3 px-2'>
+								<div class='flex items-center gap-4'>
+									<a class='text-2xl font-semibold -tracking-wider' href={`/tours/${slug}/`}>
+										{title}
+									</a>
+								</div>
+							</div>
+						</div>
+					</article>
+				</div>
+			</div>
+		</div></a>
+</article>
