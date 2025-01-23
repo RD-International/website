@@ -6,7 +6,7 @@ import CountryIcon from './icons/CountryIcon.astro'
 import ToggleTheme from './ToggleTheme.astro'
 import { SOCIALNETWORKS } from '@/data/links'
 import { siteConfig } from '@/site-config'
-import Logo from '/src/assets/images/logo.png'
+import Logo from '@/assets/images/logo.png'
 import { SignedIn, SignedOut, UserButton, SignInButton } from '@clerk/astro/components'
 
 export const prerender = false
@@ -39,7 +39,7 @@ const links = [
 		<div class='flex lg:flex-1'>
 			<a href='/' class='-m-1.5 p-1.5'>
 				<span class='sr-only'>{siteConfig.agency}</span>
-				<img class='h-16 w-auto' src='/src/assets/images/logo.png' alt='' />
+				<img class='h-16 w-auto' src={Logo.src} alt='' />
 			</a>
 		</div>
 		<div class='flex lg:hidden'>
