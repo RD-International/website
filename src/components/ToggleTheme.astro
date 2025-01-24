@@ -1,6 +1,5 @@
 ---
-import SunIcon from '@/components/icons/SunIcon'
-import MoonIcon from '@/components/icons/MoonIcon'
+import { Moon, Sun } from 'lucide-astro'
 ---
 
 <script>
@@ -34,12 +33,16 @@ import MoonIcon from '@/components/icons/MoonIcon'
 
 <theme-toggle class='relative h-6 w-6'>
 	<button id='toggle-theme' class='group' aria-label='Toggle Theme'>
-		<span class='absolute left-0 right-0 top-0 opacity-0 group-aria-pressed:opacity-100'>
-			<SunIcon />
+		<span
+			class='absolute left-0 right-0 top-0 opacity-0 group-aria-pressed:opacity-100 text-slate-300'
+		>
+			<Sun />
 		</span>
 
-		<span class='absolute left-0 right-0 top-0 opacity-0 group-aria-[pressed=false]:opacity-100'>
-			<MoonIcon />
+		<span
+			class='absolute left-0 right-0 top-0 opacity-0 group-aria-[pressed=false]:opacity-100 text-slate-400'
+		>
+			<Moon />
 		</span>
 	</button>
 </theme-toggle>

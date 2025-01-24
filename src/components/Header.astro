@@ -4,6 +4,7 @@ import Logo from '@/assets/images/logo.png'
 import { SignedIn, SignedOut, UserButton, SignInButton } from '@clerk/astro/components'
 import { Menu } from 'lucide-astro'
 import { Image } from 'astro:assets'
+import ToggleTheme from './ToggleTheme.astro'
 
 export const prerender = false
 
@@ -68,6 +69,8 @@ const links = [
 					</a>
 				))
 			}
+
+			<ToggleTheme />
 		</ul>
 		<div class='hidden lg:flex lg:flex-1 lg:justify-end'>
 			<SignedOut>
@@ -135,6 +138,8 @@ const links = [
 								</a>
 							))
 						}
+
+						<ToggleTheme />
 					</div>
 
 					<div class='py-6'>
