@@ -49,15 +49,6 @@ export default defineConfig({
 						label: 'Cover Image',
 						required: true,
 						description: 'Cover Image of the Country'
-					},
-
-					{
-						name: 'cities',
-						type: 'string',
-						list: true,
-						label: 'Cities',
-						required: true,
-						description: 'Cities in this Country'
 					}
 				]
 			},

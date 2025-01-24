@@ -2,22 +2,22 @@
 - [ ] Add Husky
 - [ ] Add tsc in package.json
 - [x] Fix Drawer
+- [x] video covers the whole page on small breakpoints
+- [x] fix the text on small breakpints
+- [x] host on github pages
+- [x] Remove unneeded package
+- [x] Make langkwai thing optional
+- [x] Hide dialog at medium breakpoints
+- [ ] Web3Forms for Contact Forms
 - [ ] Finalize Tina CMS
 - [ ] Flesh out country page + add country card
 - [ ] Add specific page for each city
 - [ ] navigation Links: home, about us, tours, contact
 - [ ] put all countries under tours
 - [ ] put all countries under tours
-- [x] video covers the whole page on small breakpoints
-- [x] fix the text on small breakpints
-- [x] host on github pages
 - [ ] Fix Get in Touch Section
-- [ ] Web3Forms for Contact Forms
 - [ ] Redo README
-- [x] Remove unneeded package
-- [ ] Setup organization
 - [ ] Fix hosting issues
-- [x] Make langkwai thing optional
-- [x] Hide dialog at medium breakpoints
+- [ ] Setup organization
 - [ ] Astro Optimizations
 - [ ] Change sign in color

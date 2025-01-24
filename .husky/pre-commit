@@ -2,7 +2,10 @@
 . "$(dirname "$0")/_/husky.sh"
 
 # npm
-# npx lint-staged
+npx lint-staged
+
+# yarn
+# yarn
 
 # pnpm
 # pnpm exec lint-staged
