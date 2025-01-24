@@ -8,9 +8,24 @@ import FacebookIcon from '@/assets/images/facebook.svg'
 import WhatsappIcon from '@/assets/images/whatsapp.svg'
 import { Mail, Map, MapPin, MapPinned, Phone } from 'lucide-astro'
 const SocialLinks = [
-{image:InstagramIcon, text:'rd_travels', imageAlt:'Instagram', href:'https://www.instagram.com/rd_intl/'},
-{image:FacebookIcon, text:'rd_travels', imageAlt:'Instagram', href:'https://www.instagram.com/rd_intl/'},
-{image:WhatsappIcon, text:siteConfig.company.phoneNumber, imageAlt:'Instagram', href:'https://www.instagram.com/rd_intl/'},
+	{
+		image: InstagramIcon,
+		text: 'rd_travels',
+		imageAlt: 'Instagram',
+		href: 'https://www.instagram.com/rd_intl/'
+	},
+	{
+		image: FacebookIcon,
+		text: 'rd_travels',
+		imageAlt: 'Instagram',
+		href: 'https://www.instagram.com/rd_intl/'
+	},
+	{
+		image: WhatsappIcon,
+		text: siteConfig.company.phoneNumber,
+		imageAlt: 'Instagram',
+		href: 'https://www.instagram.com/rd_intl/'
+	}
 ]
 ---
 
@@ -58,71 +73,66 @@ const SocialLinks = [
 					and let's start planning your perfect trip!
 				</p>
 
+				<div class='sm:grid flex flex-col grid-cols-3'>
+					<dl class='mt-10 space-y-4 text-sm text-gray-600 order-2 sm:order-1'>
+						<div class='flex gap-x-4'>
+							<dt class='flex-none'>
+								<span class='sr-only'>Address</span>
+								<MapPinned />
+							</dt>
+							<dd>
+								{siteConfig.company.address.firstLineAddress}<br />{
+									siteConfig.company.address.secondLineAddress
+								}
+							</dd>
+						</div>
+						<div class='flex gap-x-4'>
+							<dt class='flex-none'>
+								<span class='sr-only'>Telephone</span>
+								<Phone />
+							</dt>
+							<dd>
+								<a class='hover:text-gray-900' href='tel:+1 (555) 234-5678'
+									>{siteConfig.company.phoneNumber}</a
+								>
+							</dd>
+						</div>
+						<div class='flex gap-x-4'>
+							<dt class='flex-none'>
+								<span class='sr-only'>Email</span>
+								<Mail />
+							</dt>
+							<dd>
+								<a class='hover:text-gray-900' href={`mailto:${siteConfig.company.email}`}
+									>{siteConfig.company.email}</a
+								>
+							</dd>
+						</div>
 
-        <div class="sm:grid flex flex-col grid-cols-3">
+						{
+							SocialLinks.map((link) => (
+								<div class='flex gap-x-4'>
+									<dt class='flex-none'>
+										<span class='sr-only'>Whatsapp</span>
+										<Image src={link.image} alt='link.imageAlt' class='w-6 h-6' />
+									</dt>
+									<dd>
+										<a class='hover:text-gray-900' href={link.href}>
+											{link.text}
+										</a>
+									</dd>
+								</div>
+							))
+						}
+					</dl>
 
-				<dl class='mt-10 space-y-4 text-sm text-gray-600 order-2 sm:order-1'>
-					<div class='flex gap-x-4'>
-						<dt class='flex-none'>
-							<span class='sr-only'>Address</span>
-							<MapPinned />
-						</dt>
-						<dd>
-							{siteConfig.company.address.firstLineAddress}<br />{
-								siteConfig.company.address.secondLineAddress
-							}
-						</dd>
-					</div>
-					<div class='flex gap-x-4'>
-						<dt class='flex-none'>
-							<span class='sr-only'>Telephone</span>
-							<Phone />
-						</dt>
-						<dd>
-							<a class='hover:text-gray-900' href='tel:+1 (555) 234-5678'
-								>{siteConfig.company.phoneNumber}</a
-							>
-						</dd>
-					</div>
-					<div class='flex gap-x-4'>
-						<dt class='flex-none'>
-							<span class='sr-only'>Email</span>
-							<Mail />
-						</dt>
-						<dd>
-							<a class='hover:text-gray-900' href={`mailto:${siteConfig.company.email}`}
-								>{siteConfig.company.email}</a
-							>
-						</dd>
-					</div>
-
-
-        {
-        SocialLinks.map((link)=>(
-
-					<div class='flex gap-x-4'>
-						<dt class='flex-none'>
-							<span class='sr-only'>Whatsapp</span>
-							<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-							<Image src={link.image} alt='link.imageAlt' class='w-6 h-6' />
-						</dt>
-						<dd>
-              <a class='hover:text-gray-900' href={link.href}
-								>{link.text}</a
-							>
-						</dd>
-					</div>
-        ))
-        }
-
-
-
-				</dl>
-
-					<div style='height: 24rem;' class=' col-span-2 shadow shadow-inset border border-slate-300 mt-8 sm:order-3' >
+					<div
+						style='height: 24rem;'
+						class='col-span-2 shadow shadow-inset border border-slate-300 mt-8 sm:order-3'
+					>
 						<GoogleMapsEmbed />
 					</div>
-        </div>
+				</div>
 			</div>
 		</div>
 		<form action='#' method='POST' class='px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48'>

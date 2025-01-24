@@ -210,3 +210,29 @@ All commands are run from the root of the project, from a terminal:
 <a href="https://github.com/danielcgilibert/blog-template/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=danielcgilibert/blog-template" />
 </a>
+
+# Roadmap
+
+- [x] About Page with Google Maps and Social Link (Web3Forms)
+- [x] Add Husky
+- [x] Add tsc in package.json
+- [x] Fix Drawer
+- [x] video covers the whole page on small breakpoints
+- [x] fix the text on small breakpints
+- [x] host on github pages
+- [x] Remove unneeded package
+- [x] Make langkwai thing optional
+- [x] Hide dialog at medium breakpoints
+- [ ] Web3Forms for Contact Forms
+- [ ] Finalize Tina CMS
+- [ ] Flesh out country page + add country card
+- [ ] Add specific page for each city
+- [ ] navigation Links: home, about us, tours, contact
+- [ ] put all countries under tours
+- [ ] put all countries under tours
+- [ ] Fix Get in Touch Section
+- [ ] Redo README
+- [ ] Fix hosting issues
+- [ ] Setup organization
+- [x] Astro Optimizations
+- [ ] Change sign in color
