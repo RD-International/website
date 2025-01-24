@@ -1,0 +1,355 @@
+---
+import BaseLayout from '@/layouts/BaseLayout'
+import { Image } from 'astro:assets'
+import { Amphora, Bird, Flower, ShieldCheck, User, Users } from 'lucide-astro'
+import ScubaDivingImage from '@/assets/images/4.jpg'
+import IslandImage from '@/assets/images/5.jpg'
+import HouseIslandImage from '@/assets/images/7.jpg'
+import BoatImage from '@/assets/images/3.jpg'
+import IslandDroneImage from '@/assets/images/1.jpg'
+import { siteConfig } from '@/data/site.config'
+import InstagramIcon from '@/assets/images/instagram.svg'
+import FacebookIcon from '@/assets/images/facebook.svg'
+import WhatsappIcon from '@/assets/images/whatsapp.svg'
+import GoogleMapsEmbed from '@/components/GoogleMapsEmbed'
+import Waves from '@/components/Waves'
+
+export const prerender = false
+
+const GOOGLE_MAPS_API_KEY = import.meta.env.GOOGLE_MAPS_API_KEY
+---
+
+<BaseLayout center={false}>
+	<div class='bg-white'>
+		<!-- Header -->
+		<main class='isolate'>
+			<!-- Hero section -->
+
+			<div class='relative isolate -z-10'>
+				<svg
+					class='absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]'
+					aria-hidden='true'
+				>
+					<defs>
+						<pattern
+							id='1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84'
+							width='200'
+							height='200'
+							x='50%'
+							y='-1'
+							patternUnits='userSpaceOnUse'
+						>
+							<path d='M.5 200V.5H200' fill='none'></path>
+						</pattern>
+					</defs>
+					<svg x='50%' y='-1' class='overflow-visible fill-gray-50'>
+						<path
+							d='M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z'
+							stroke-width='0'></path>
+					</svg>
+					<rect
+						width='100%'
+						height='100%'
+						stroke-width='0'
+						fill='url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)'></rect>
+				</svg>
+				<div
+					class='absolute left-1/2 right-0 top-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48'
+					aria-hidden='true'
+				>
+					<div
+						class='aspect-[801/1036] w-[50.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30'
+						style='clip-path: polygon(63.1% 29.5%, 100% 17.1%, 76.6% 3%, 48.4% 0%, 44.6% 4.7%, 54.5% 25.3%, 59.8% 49%, 55.2% 57.8%, 44.4% 57.2%, 27.8% 47.9%, 35.1% 81.5%, 0% 97.7%, 39.2% 100%, 35.2% 81.4%, 97.2% 52.8%, 63.1% 29.5%)'
+					>
+					</div>
+				</div>
+				<div class='overflow-hidden'>
+					<div
+						class='mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32 bg-gradient-to-b from-white to-teal-400/20'
+					>
+						<div class='mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center'>
+							<div class='relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl'>
+								<h1 class='font-bold text-teal-400 text-2xl'>
+									{siteConfig.company.name}
+								</h1>
+								<h1
+									class='text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl'
+								>
+									We’re changing the way <span class='text-teal-400'>Muslims</span> travel
+								</h1>
+								<p
+									class='mt-8 text-pretty text-lg font-medium text-gray-500 sm:max-w-md sm:text-xl/8 lg:max-w-none'
+								>
+									Our tour agency offers unforgettable experiences in the Maldives, all while
+									upholding the principles of Islamic values. We curate exclusive, family-friendly
+									tours that prioritize respect for local culture, privacy, and comfort. From
+									luxurious beach resorts to serene island excursions, every aspect of our services
+									is designed to ensure a memorable journey in a way that aligns with Muslim
+									traditions. With a focus on halal food, modesty, and prayer facilities, we provide
+									a peaceful and enriching environment for our guests to enjoy the natural beauty
+									and tranquility of the Maldives.
+								</p>
+							</div>
+							<div
+								class='mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0'
+							>
+								<div
+									class='ml-auto w-60 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80'
+								>
+									<div class='relative'>
+										<Image
+											src={ScubaDivingImage}
+											alt=''
+											class='aspect-[4/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg'
+										/>
+										<div
+											class='pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10'
+										>
+										</div>
+									</div>
+								</div>
+								<div class='mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36'>
+									<div class='relative'>
+										<Image
+											src={HouseIslandImage}
+											alt=''
+											class='aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg'
+										/>
+										<div
+											class='pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10'
+										>
+										</div>
+									</div>
+									<div class='relative'>
+										<Image
+											src={IslandImage}
+											alt=''
+											class='aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg'
+										/>
+										<div
+											class='pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10'
+										>
+										</div>
+									</div>
+								</div>
+								<div class='w-44 flex-none space-y-8 pt-32 sm:pt-0'>
+									<div class='relative'>
+										<Image
+											src={BoatImage}
+											alt=''
+											class='aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg'
+										/>
+										<div
+											class='pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10'
+										>
+										</div>
+									</div>
+									<div class='relative'>
+										<Image
+											src={IslandDroneImage}
+											alt=''
+											class='aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg'
+										/>
+										<div
+											class='pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10'
+										>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<Waves />
+			<!-- Content section -->
+			<div class='mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8'>
+				<div class='mx-auto max-w-2xl lg:mx-0 lg:max-w-none'>
+					<h2
+						class='text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl relative'
+						style='z-index: 30;'
+					>
+						Our mission
+					</h2>
+					<div class='mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row'>
+						<div class='lg:w-full lg:max-w-2xl lg:flex-auto'>
+							<p class='text-xl/8 text-gray-600'>
+								Our mission is to offer Muslim travelers enriching and seamless experiences across a
+								variety of destinations, with a strong commitment to Islamic values. We provide
+								halal-friendly tours that prioritize comfort, privacy, and respect for modesty,
+								ensuring every journey is both spiritually fulfilling and culturally enriching.
+							</p>
+							<p class='mt-10 max-w-xl text-base/7 text-gray-700'>
+								By thoughtfully curating each itinerary, we create safe, family-friendly
+								environments where guests can enjoy unique destinations while staying true to their
+								faith and values.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class='mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8'>
+				<Image src={IslandImage} alt='' class='aspect-[5/2] w-full object-cover xl:rounded-3xl' />
+			</div>
+
+			<!-- Values section -->
+			<div class='mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8'>
+				<div class='mx-auto max-w-2xl lg:mx-0'>
+					<h2 class='text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl'>
+						Our values
+					</h2>
+					<p class='mt-6 text-lg/8 text-gray-600'>
+						We believe that upholding strong values in the touring business fosters trust, ensures
+						meaningful experiences, and creates a positive impact on both our guests and the
+						communities we visit.
+					</p>
+				</div>
+				<dl
+					class='mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base/7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3'
+				>
+					<div>
+						<User class='text-teal-400' />
+						<dt class='font-semibold text-gray-900'>Respect for Islamic Principles</dt>
+						<dd class='mt-1 text-gray-600'>
+							We prioritize halal travel experiences, ensuring that every aspect of our tours aligns
+							with Islamic teachings, from food to daily routines.
+						</dd>
+					</div>
+					<div>
+						<Bird class='text-teal-400' />
+						<dt class='font-semibold text-gray-900'>Modesty and Privacy</dt>
+						<dd class='mt-1 text-gray-600'>
+							We create spaces that respect privacy and modesty, offering travel experiences that
+							allow our guests to feel comfortable and at peace.
+						</dd>
+					</div>
+					<div>
+						<Amphora class='text-teal-400' />
+						<dt class='font-semibold text-gray-900'>Cultural Sensitivity</dt>
+						<dd class='mt-1 text-gray-600'>
+							Our tours are designed with a deep respect for local cultures, fostering understanding
+							and promoting respectful interactions with communities.
+						</dd>
+					</div>
+					<div>
+						<Users class='text-teal-400' />
+						<dt class='font-semibold text-gray-900'>Family-Friendliness</dt>
+						<dd class='mt-1 text-gray-600'>
+							We design our tours to be welcoming and suitable for families, offering safe,
+							enjoyable environments for all age groups.
+						</dd>
+					</div>
+					<div>
+						<ShieldCheck class='text-teal-400' />
+						<dt class='font-semibold text-gray-900'>Integrity and Transparency</dt>
+						<dd class='mt-1 text-gray-600'>
+							We operate with honesty and openness, ensuring our guests have clear, accurate
+							information and trust in every aspect of their journey.
+						</dd>
+					</div>
+					<div>
+						<Flower class='text-teal-400' />
+						<dt class='font-semibold text-gray-900'>Sustainability and Responsibility</dt>
+						<dd class='mt-1 text-gray-600'>
+							We are committed to preserving the beauty and integrity of the environments we visit,
+							promoting responsible travel that supports both nature and local communities.
+						</dd>
+					</div>
+				</dl>
+			</div>
+
+			<!-- Logo cloud -->
+			<div class='relative isolate -z-10 mt-32 sm:mt-48'>
+				<div
+					class='absolute inset-x-0 top-1/2 -z-10 flex -translate-y-1/2 justify-center overflow-hidden [mask-image:radial-gradient(50%_45%_at_50%_55%,white,transparent)]'
+				>
+					<svg class='h-[40rem] w-[80rem] flex-none stroke-gray-200' aria-hidden='true'>
+						<defs>
+							<pattern
+								id='e9033f3e-f665-41a6-84ef-756f6778e6fe'
+								width='200'
+								height='200'
+								x='50%'
+								y='50%'
+								src=''
+								patternUnits='userSpaceOnUse'
+								patternTransform='translate(-100 0)'
+							>
+								<path d='M.5 200V.5H200' fill='none'></path>
+							</pattern>
+						</defs>
+						<svg x='50%' y='50%' class='overflow-visible fill-gray-50'>
+							<path d='M-300 0h201v201h-201Z M300 200h201v201h-201Z' stroke-width='0'></path>
+						</svg>
+						<rect
+							width='100%'
+							height='100%'
+							stroke-width='0'
+							fill='url(#e9033f3e-f665-41a6-84ef-756f6778e6fe)'></rect>
+					</svg>
+				</div>
+			</div>
+		</main>
+
+		<!-- Team section -->
+		<div class='mx-auto mt-32 mb-20 max-w-7xl px-6 sm:mt-48 lg:px-8'>
+			<div class='mx-auto max-w-2xl lg:mx-0'>
+				<h2 class='text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl'>
+					Our team
+				</h2>
+				<p class='mt-6 text-lg/8 text-gray-600'>
+					We’re a dynamic group of individuals who are passionate about what we do and dedicated to
+					delivering the best results for our clients.
+				</p>
+			</div>
+			<ul
+				role='list'
+				class='mx-auto mt-20 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-16 text-center sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6'
+			>
+				{
+					siteConfig.company.members.map((member) => (
+						<li>
+							<Image
+								class='mx-auto  object-cover rounded-full overflow-clip'
+								src={member.image}
+								alt={member.name}
+								width={100}
+								height={100}
+							/>
+							<h3 class='mt-6 text-base/7 font-semibold tracking-tight text-gray-900'>
+								{member.name}
+							</h3>
+							<p class='text-sm/6 text-gray-600'>{member.role}</p>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+
+		<div class='mx-auto mt-32 mb-20 max-w-7xl px-6 sm:mt-48 lg:px-8'>
+			<div class='mx-auto max-w-2xl lg:mx-0'>
+				<h2 class='text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl'>
+					Where to find us
+				</h2>
+			</div>
+
+			<div
+				style='height: 30rem;'
+				class='rounded-md overflow-clip border border-teal-800/80 shadow shadow-teal-400 mt-2'
+			>
+				<GoogleMapsEmbed />
+			</div>
+
+			<div class='mt-2'>
+				<p class='text-teal-600 font-bold'>Follow us on our socials:</p>
+				<div class='flex items-center gap-1 mt-2'>
+					<Image src={InstagramIcon} alt='InstagramIcon' class='w-6 h-6' />
+					<Image src={FacebookIcon} alt='Facebook' class='w-6 h-6' />
+					<Image src={WhatsappIcon} alt='Whatsapp' class='w-6 h-6' />
+				</div>
+			</div>
+		</div>
+	</div>
+</BaseLayout>

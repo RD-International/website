@@ -20,7 +20,7 @@ const links = [
 
 	{
 		name: 'About Us',
-		href: '/about-us'
+		href: '/about'
 	},
 
 	{
@@ -30,11 +30,11 @@ const links = [
 ]
 ---
 
-<header class='absolute inset-x-0 top-0 z-50'>
-	<nav class='flex items-center justify-between p-6 lg:px-8' aria-label='Global'>
+<header class='fixed inset-x-0 top-0 z-40 bg-gradient-to-b from-teal-600/60 to-teal-400/0'>
+	<nav class='flex items-center justify-between p-6 py-2 lg:px-8' aria-label='Global'>
 		<div class='flex lg:flex-1'>
 			<a href='/' class='-m-1.5 p-1.5'>
-				<span class='sr-only'>{siteConfig.agency}</span>
+				<span class='sr-only'>{siteConfig.company.name}</span>
 				<Image class='h-16 w-auto' src={Logo} alt='' />
 			</a>
 		</div>
@@ -82,7 +82,7 @@ const links = [
 			<button
 				onclick='document.querySelector("dialog").showModal()'
 				type='button'
-				class='rounded bg-white/20 px-2 text-sm font-semibold text-white shadow-sm hover:bg-white/20 py-2 lg:hidden'
+				class='rounded bg-slate-700/80 px-2 text-sm font-semibold text-white shadow-sm hover:bg-white/20 py-2 lg:hidden'
 			>
 				<Menu />
 			</button>
@@ -97,7 +97,7 @@ const links = [
 		>
 			<div class='flex items-center justify-between'>
 				<a href='/' class='-m-1.5 p-1.5'>
-					<span class='sr-only'>{siteConfig.agency}</span>
+					<span class='sr-only'>{siteConfig.company.name}</span>
 					<Image class='h-8 w-auto' src={Logo} alt='' />
 				</a>
 				<button

@@ -20,3 +20,4 @@
 - [x] Make langkwai thing optional
 - [x] Hide dialog at medium breakpoints
 - [ ] Astro Optimizations
+- [ ] Change sign in color

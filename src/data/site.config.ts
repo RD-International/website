@@ -7,25 +7,56 @@ interface SiteConfig {
 	ogLocale: string
 	shareMessage: string
 	paginationSize: number
+	agencyTest: {
+		name: string
+	}
+	company: {
+		name: string
+		shortName: string
+		address: {
+			firstLineAddress: string
+			secondLineAddress: string
+		}
+		phoneNumber: string
+		email: string
+		estabilished: year
+		members: {
+			name: string
+			role: string
+			image: string
+		}[]
+	}
 }
 
 export const siteConfig: SiteConfig = {
-	site: 'https://blog-template-gray.vercel.app/', // Write here your website url
+	site: 'https://3urdparty.github.io/travel-agency/', // Write here your website url
 	author: 'Your Name', // Site author
-	title: 'Tour Agency', // Site title.
-	description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', // Description to display in the meta countries
-	agency: '[AGENCY NAME]',
+	title: 'RD Intl. Travel Agency', // Site title.
+	description: 'Muslim Travel Agency specialising in South East Asia', // Description to display in the meta countries
+	company: {
+		name: 'RD International',
+		shortName: 'RD Intl.',
+		address: {
+			firstLineAddress: 'Mavis Island',
+			secondLineAddress: 'Chicago, IL, 99191'
+		},
+		phoneNumber: '+1 (555) 234-5678',
+		email: 'hello@example.com',
+		estabilished: 2001,
+		members: [
+			{
+				name: '...',
+				role: 'Owner',
+				image: '/src/assets/images/owner.png'
+			}
+		]
+	},
 	lang: 'en-GB',
 	ogLocale: 'en_GB',
 	shareMessage: 'Share this tour', // Message to share a tour on social media
 	paginationSize: 6, // Number of tours per page
 	customerCount: 120,
 	countryCount: 6,
-	estabilishmentYear: 2001,
 	fiveStarReviews: 45,
-	expensesSaved: 120,
-	firstLineAddress: 'Mavis Island',
-	secondLineAddress: 'Chicago, IL, 99191',
-	phoneNumber: '+1 (555) 234-5678',
-	email: 'hello@example.com'
+	expensesSaved: 120
 }
