@@ -7,7 +7,7 @@ export const getCountries = async (max?: number) => {
 
 export const getCities = async (max?: number) => {
 	return (await getCollection('tours'))
-		.map((tour: CollectionEntry<Tour>) => tour.data.city)
+		.map((tour: CollectionEntry<'tours'>) => tour.data.city)
 		.slice(0, max)
 }
 

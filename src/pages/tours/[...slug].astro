@@ -1,7 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content'
 import TourListing from '@/layouts/TourListing'
-import Code from '@/components/mdx/Code'
 import { getTours } from '@/utils'
 import SButton from '@/components/mdx/SButton'
 import Disqus from '@/components/Disqus'
@@ -47,7 +46,7 @@ const disqusEnabled = disqusConfig.enabled
 		<!-- tour -->
 		<article class='max-w-full w-full'>
 			<div class='prose prose-lg md:prose-xl dark:prose-invert mb-12 min-w-full'>
-				<Content components={{ pre: Code, SButton }} />
+				<Content components={{ pre: SButton }} />
 			</div>
 
 			<!-- related tours -->

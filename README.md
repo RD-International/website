@@ -133,7 +133,6 @@ pnpm dev
   - favicon
   - robots.txt -> update the Sitemap url to your own domain
   - open-graph -> the open-graph is the image that will be displayed when sharing the blog link. For tours, the preview image is the tour cover.
-- Edit the social networks in **src/data/links.ts**, change the URL to your social network.
 
 ## 🗂️ Adding a category
 

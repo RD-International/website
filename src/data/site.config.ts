@@ -7,9 +7,6 @@ interface SiteConfig {
 	ogLocale: string
 	shareMessage: string
 	paginationSize: number
-	agencyTest: {
-		name: string
-	}
 	company: {
 		name: string
 		shortName: string
@@ -19,13 +16,18 @@ interface SiteConfig {
 		}
 		phoneNumber: string
 		email: string
-		estabilished: year
+		estabilished: number
 		members: {
 			name: string
 			role: string
 			image: string
 		}[]
 	}
+
+	customerCount: number
+	countryCount: number
+	fiveStarReviews: number
+	expensesSaved: number
 }
 
 export const siteConfig: SiteConfig = {

@@ -3,15 +3,15 @@ import { getCollection, getEntry, type CollectionEntry } from 'astro:content'
 import type { Tour } from 'tina/__generated__/types'
 
 export const getTours = async (max?: number) => {
-	const tours: CollectionEntry<Tour>[] = await getCollection('tours')
+	const tours: CollectionEntry<'tours'>[] = await getCollection('tours')
 	return tours
-		.filter((tour) => !tour.data.draft)
+		.filter((tour: CollectionEntry<'tours'>) => !tour.data.draft)
 		.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 		.slice(0, max)
 }
 
 export const getCategories = async () => {
-	const tours: CollectionEntry<Tour>[] = await getCollection('tours')
+	const tours: CollectionEntry<'tours'>[] = await getCollection('tours')
 	const categories = new Set(
 		tours.filter((tour) => !tour.data.draft).map((tour) => tour.data.category)
 	)
