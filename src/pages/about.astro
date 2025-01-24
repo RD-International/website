@@ -8,9 +8,6 @@ import HouseIslandImage from '@/assets/images/7.jpg'
 import BoatImage from '@/assets/images/3.jpg'
 import IslandDroneImage from '@/assets/images/1.jpg'
 import { siteConfig } from '@/data/site.config'
-import InstagramIcon from '@/assets/images/instagram.svg'
-import FacebookIcon from '@/assets/images/facebook.svg'
-import WhatsappIcon from '@/assets/images/whatsapp.svg'
 import GoogleMapsEmbed from '@/components/GoogleMapsEmbed'
 import Waves from '@/components/Waves'
 
@@ -190,12 +187,13 @@ const GOOGLE_MAPS_API_KEY = import.meta.env.GOOGLE_MAPS_API_KEY
 				</div>
 			</div>
 
-			<div class='mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8'>
+			<div class='mt-32 pb-20 bg-[rgb(91,193,199)] sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8'>
 				<Image src={IslandImage} alt='' class='aspect-[5/2] w-full object-cover xl:rounded-3xl' />
 			</div>
 
+			<Waves />
 			<!-- Values section -->
-			<div class='mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8'>
+			<div class='mx-auto mt-0 max-w-7xl px-6 sm:mt-40 lg:px-8'>
 				<div class='mx-auto max-w-2xl lg:mx-0'>
 					<h2 class='text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl'>
 						Our values
@@ -326,30 +324,6 @@ const GOOGLE_MAPS_API_KEY = import.meta.env.GOOGLE_MAPS_API_KEY
 					))
 				}
 			</ul>
-		</div>
-
-		<div class='mx-auto mt-32 mb-20 max-w-7xl px-6 sm:mt-48 lg:px-8'>
-			<div class='mx-auto max-w-2xl lg:mx-0'>
-				<h2 class='text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl'>
-					Where to find us
-				</h2>
-			</div>
-
-			<div
-				style='height: 30rem;'
-				class='rounded-md overflow-clip border border-teal-800/80 shadow shadow-teal-400 mt-2'
-			>
-				<GoogleMapsEmbed />
-			</div>
-
-			<div class='mt-2'>
-				<p class='text-teal-600 font-bold'>Follow us on our socials:</p>
-				<div class='flex items-center gap-1 mt-2'>
-					<Image src={InstagramIcon} alt='InstagramIcon' class='w-6 h-6' />
-					<Image src={FacebookIcon} alt='Facebook' class='w-6 h-6' />
-					<Image src={WhatsappIcon} alt='Whatsapp' class='w-6 h-6' />
-				</div>
-			</div>
 		</div>
 	</div>
 </BaseLayout>
