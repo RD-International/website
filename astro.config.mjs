@@ -10,6 +10,7 @@ import clerk from '@clerk/astro'
 // https://astro.build/config
 export default defineConfig({
 	site: siteConfig.site,
+	base: siteConfig.base,
 	markdown: {
 		remarkPlugins: [remarkReadingTime],
 		drafts: true,

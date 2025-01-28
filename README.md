@@ -236,3 +236,8 @@ All commands are run from the root of the project, from a terminal:
 - [ ] Setup organization
 - [x] Astro Optimizations
 - [ ] Change sign in color
+- [ ] Finalize Github Organization
+- [ ] Finalize Readme and Git Repo Details
+- [ ] Fix view on large breakpoints
+- [ ] Fix github page mappings at paths
+- [ ] Remove .env.local

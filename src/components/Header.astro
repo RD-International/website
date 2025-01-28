@@ -2,13 +2,16 @@
 import { siteConfig } from '@/site-config'
 import Logo from '@/assets/images/logo.png'
 import { SignedIn, SignedOut, UserButton, SignInButton } from '@clerk/astro/components'
-import { Menu } from 'lucide-astro'
+import { DoorOpen, Menu, User } from 'lucide-astro'
 import { Image } from 'astro:assets'
-import ToggleTheme from './ToggleTheme.astro'
 
 export const prerender = false
 
 const links = [
+	{
+		name: 'Home',
+		href: '/'
+	},
 	{
 		name: 'Countries',
 		href: '/countries'
@@ -22,11 +25,6 @@ const links = [
 	{
 		name: 'About Us',
 		href: '/about'
-	},
-
-	{
-		name: 'Company',
-		href: '/company'
 	}
 ]
 ---
@@ -34,8 +32,9 @@ const links = [
 <header class='fixed inset-x-0 top-0 z-40 bg-gradient-to-b from-teal-600/60 to-teal-400/0'>
 	<nav class='flex items-center justify-between p-4 pl-2 py-2 lg:px-8' aria-label='Global'>
 		<div class='flex lg:flex-1'>
-			<a href='/' class='-m-1.5 p-1.5'>
+			<a href=`${siteConfig.base}/` class='-m-1.5 p-1.5'>
 				<span class='sr-only'>{siteConfig.company.name}</span>
+				test
 				<Image class='h-16 w-auto' src={Logo} alt='' />
 			</a>
 		</div>
@@ -69,12 +68,15 @@ const links = [
 					</a>
 				))
 			}
-
-			<ToggleTheme />
 		</ul>
 		<div class='hidden lg:flex lg:flex-1 lg:justify-end'>
 			<SignedOut>
-				<SignInButton mode='modal' />
+				<SignInButton
+					mode='modal'
+					class='rounded bg-teal-400 px-2 py-1 text-sm font-semibold text-teal-700 shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600 flex-items-center flex gap-2'
+				>
+					<span>Sign in</span>
+				</SignInButton>
 			</SignedOut>
 			<SignedIn>
 				<UserButton />
@@ -138,13 +140,16 @@ const links = [
 								</a>
 							))
 						}
-
-						<ToggleTheme />
 					</div>
 
 					<div class='py-6'>
 						<SignedOut>
-							<SignInButton mode='modal' />
+							<SignInButton
+								mode='modal'
+								class='rounded bg-teal-400 px-2 py-1 text-sm font-semibold text-teal-700 shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600 flex-items-center flex gap-2'
+							>
+								<span>Sign in</span>
+							</SignInButton>
 						</SignedOut>
 						<SignedIn>
 							<UserButton />
