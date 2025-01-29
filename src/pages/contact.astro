@@ -1,0 +1,30 @@
+---
+import GetInTouch from '@/components/GetInTouch'
+import TitlePage from '@/components/TitlePage'
+import BaseLayout from '@/layouts/BaseLayout'
+---
+
+<BaseLayout title='Home'>
+	<div>
+		<TitlePage title='Contact Us' />
+	</div>
+	<GetInTouch />
+</BaseLayout>
+
+<script>
+	import { animate } from 'motion'
+	const showAnimations = localStorage.getItem('animations') === 'true'
+
+	if (showAnimations) {
+		animate(
+			'.title',
+			{ y: [80, 0], opacity: [0, 1] },
+			{
+				duration: 2.5,
+				opacity: { duration: 3 },
+
+				offset: [0, 0.55, 0.75]
+			}
+		)
+	}
+</script>

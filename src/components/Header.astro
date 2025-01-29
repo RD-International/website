@@ -2,7 +2,7 @@
 import { siteConfig } from '@/site-config'
 import Logo from '@/assets/images/logo.png'
 import { SignedIn, SignedOut, UserButton, SignInButton } from '@clerk/astro/components'
-import { DoorOpen, Menu, User } from 'lucide-astro'
+import { Menu } from 'lucide-astro'
 import { Image } from 'astro:assets'
 
 export const prerender = false
@@ -21,6 +21,10 @@ const links = [
 	{
 		name: 'About Us',
 		href: 'about'
+	},
+	{
+		name: 'Contact Us',
+		href: 'contact'
 	}
 ]
 
