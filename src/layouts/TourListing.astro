@@ -32,7 +32,7 @@ const articleDate = pubDate.toISOString()
 						src={heroImage}
 						format='jpg'
 						loading='eager'
-						class='absolute inset-0 h-full -z-10 object-cover'
+						class='absolute inset-0 h-full -z-10 object-cover w-full'
 						alt={`img of ${title}`}
 					/>
 				)
@@ -48,7 +48,7 @@ const articleDate = pubDate.toISOString()
 			>
 			</div>
 		</div>
-		<div class='mx-auto max-w-7xl px-6 lg:px-8 mt-20 bg-gradient-to-b from-transparent to-teal-950'>
+		<div class='mx-auto px-6 lg:px-8 mt-20 bg-gradient-to-b from-transparent to-teal-950 w-full'>
 			<div class='mx-auto max-w-2xl py-32 sm:py-48 lg:py-56'>
 				<div class='hidden sm:mb-8 sm:flex sm:justify-center'>
 					<div
@@ -137,11 +137,6 @@ const articleDate = pubDate.toISOString()
 								</div>
 							</div>
 
-							<StarReview rating={4} reviewCount={20} />
-
-							<div class='flex items-center gap-2 mt-2 mb-2'>
-								<Country country={country} />
-							</div>
 							<hr class='my-4' />
 							<BookTourForm />
 						</div>

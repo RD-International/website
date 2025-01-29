@@ -4,7 +4,6 @@ import FormattedDate from '@/components/FormattedDate'
 import ArrowUp from '@/components/icons/ArrowUp'
 import { Clock, DollarSign, Hourglass, User, Users } from 'lucide-astro'
 import StarReview from './StarReview.astro'
-import Country from './Country.astro'
 
 const {
 	id,
@@ -30,9 +29,6 @@ const base = import.meta.env.BASE_URL
 <article
 	class='grid grid-rows-[300px_auto] md:grid-rows-[300px_220px] min-h-full group border rounded-md relative'
 >
-	<div class='flex justify-end w-full items-center absolute top-0 py-1 px-1 z-20 left-0'>
-		<Country country={country} />
-	</div>
 	<a class='relative overflow-hidden' href=`${base}/tours/${slug}/`>
 		<Image
 			src={heroImage}

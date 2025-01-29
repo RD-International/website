@@ -157,16 +157,15 @@ All commands are run from the root of the project, from a terminal:
 - [x] Astro Optimizations
 - [x] Flesh out country page + add country card
 - [x] Add specific page for each city
+- [x] navigation Links: home, about us, tours, contact
+- [x] put all countries under tours
+- [x] Setup organization
+- [x] Change sign in color
+- [x] Finalize Github Organization
+- [x] Finalize Readme and Git Repo Details
+- [x] Fix view on large breakpoints
+- [x] Fix github page mappings at paths
 - [ ] Web3Forms for Contact Forms
-- [ ] navigation Links: home, about us, tours, contact
-- [ ] put all countries under tours
-- [ ] put all countries under tours
 - [ ] Fix Get in Touch Section
 - [ ] Redo README
 - [ ] Fix hosting issues
-- [ ] Setup organization
-- [ ] Change sign in color
-- [ ] Finalize Github Organization
-- [ ] Finalize Readme and Git Repo Details
-- [ ] Fix view on large breakpoints
-- [ ] Fix github page mappings at paths
