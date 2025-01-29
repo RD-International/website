@@ -6,8 +6,11 @@ const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || 'main'
 
 export default defineConfig({
 	branch,
-	clientId: null, // Get this from tina.io
-	token: null, // Get this from tina.io
+	clientId: '1d3715c5-14d8-43fc-9d44-14aeb20542b3', // Get this from tina.io
+	token: 'a88b1270d4ad37284d9a7086baf4f8a39e77aed7', // Get this from tina.io
+
+	// clientId: null, // Get this from tina.io
+	// token: null, // Get this from tina.io
 
 	build: {
 		outputFolder: 'admin',
@@ -111,7 +114,7 @@ export default defineConfig({
 					{
 						name: 'duration',
 						label: 'Duration',
-						type: 'number',
+						type: 'string',
 						description: 'Duration of the tour package'
 					},
 					{

@@ -28,7 +28,7 @@ const tours = defineCollection({
 			draft: z.boolean().default(false),
 			price: z.number(),
 			minPeopleCount: z.number(),
-			duration: z.number(),
+			duration: z.string(),
 			country: reference('countries'),
 			city: z.string(),
 			featured: z.boolean().default(false)

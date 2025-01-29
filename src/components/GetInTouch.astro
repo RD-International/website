@@ -6,6 +6,7 @@ import { Image } from 'astro:assets'
 import InstagramIcon from '@/assets/images/instagram.svg'
 import FacebookIcon from '@/assets/images/facebook.svg'
 import WhatsappIcon from '@/assets/images/whatsapp.svg'
+import TikTokIcon from '@/assets/images/tiktok.svg'
 import { Mail, Map, MapPin, MapPinned, Phone } from 'lucide-astro'
 const SocialLinks = [
 	{
@@ -23,6 +24,13 @@ const SocialLinks = [
 	{
 		image: WhatsappIcon,
 		text: siteConfig.company.phoneNumber,
+		imageAlt: 'Instagram',
+		href: 'https://www.instagram.com/rd_intl/'
+	},
+
+	{
+		image: TikTokIcon,
+		text: '@rd_travels',
 		imageAlt: 'Instagram',
 		href: 'https://www.instagram.com/rd_intl/'
 	}
