@@ -6,9 +6,11 @@ export interface Props {
 const { country } = Astro.props
 import { Image } from 'astro:assets'
 const code = CountryCodes[country as keyof typeof CountryCodes] || 'mv'
+
+const base = import.meta.env.BASE_URL
 ---
 
-<a href={`/countries/${encodeURIComponent('country')}`}>
+<a href=`${base}/countries/${encodeURIComponent('country')}`>
 	<span
 		class='inline-flex items-center gap-x-1.5 rounded-md px-2 py-1 text-xs font-medium text-teal-800 border border-slate-300 ring-inset bg-white/80'
 	>

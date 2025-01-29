@@ -9,6 +9,8 @@ type Props = {
 }
 
 const { tours } = Astro.props
+
+const base = import.meta.env.BASE_URL
 ---
 
 <section class={cn(`flex flex-col md:flex-row sm:justify-between gap-8`)}>
@@ -28,7 +30,7 @@ const { tours } = Astro.props
 							/>
 						</div>
 						<header class='flex justify-center items-center'>
-							<a class='font-medium  hover:underline' href={`/tour/${tour.slug}/`}>
+							<a class='font-medium  hover:underline' href={`${base}/tour/${tour.slug}/`}>
 								{tour.data.title}
 							</a>
 						</header>

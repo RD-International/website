@@ -4,6 +4,8 @@ import TitlePage from '@/components/TitlePage'
 import { getTours } from '@/utils'
 import ListTours from '@/components/ListTours'
 const tours = await getTours()
+
+const base = import.meta.env.BASE_URL
 ---
 
 <BaseLayout title='Our Tours'>
@@ -16,7 +18,7 @@ const tours = await getTours()
 		{
 			tours.map((tour) => (
 				<a
-					href={`/tours/${tour.slug}`}
+					href={`${base}/tours/${tour.slug}`}
 					class='inline-block bg-gray-200  rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'
 				>
 					#{tour.data.title}

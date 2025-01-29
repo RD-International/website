@@ -2,17 +2,10 @@
 import BaseLayout from '@/layouts/BaseLayout'
 import { Image } from 'astro:assets'
 import IslandImage from '@/assets/images/1.jpg'
-import { siteConfig } from '@/data/site.config'
+
+const base = import.meta.env.BASE_URL
 ---
 
-<!--
-  This example requires updating your template:
-
-  ```
-  <html class="h-full">
-  <body class="h-full">
-  ```
--->
 <BaseLayout>
 	<div
 		class='grid min-h-full grid-cols-1 grid-rows-[1fr_auto_1fr] bg-white lg:grid-cols-[max(50%,36rem)_1fr]'
@@ -31,7 +24,7 @@ import { siteConfig } from '@/data/site.config'
 					Sorry, we couldn’t find the page you’re looking for.
 				</p>
 				<div class='mt-10'>
-					<a href=`${siteConfig.base}/` class='text-sm/7 font-semibold text-teal-600'
+					<a href=`${base}/` class='text-sm/7 font-semibold text-teal-600'
 						><span aria-hidden='true'>&larr;</span> Back to home</a
 					>
 				</div>
@@ -42,11 +35,6 @@ import { siteConfig } from '@/data/site.config'
 				<nav
 					class='mx-auto flex w-full max-w-7xl items-center gap-x-4 px-6 text-sm/7 text-gray-600 lg:px-8'
 				>
-					<a href='#'>Contact support</a>
-					<svg viewBox='0 0 2 2' aria-hidden='true' class='size-0.5 fill-gray-300'>
-						<circle cx='1' cy='1' r='1'></circle>
-					</svg>
-					<a href='#'>Status</a>
 				</nav>
 			</div>
 		</footer>

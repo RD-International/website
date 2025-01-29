@@ -3,6 +3,8 @@ import { Star } from 'lucide-astro'
 
 const { rating, reviewCount = 10 } = Astro.props
 const maxRating = 5
+
+const base = import.meta.env.BASE_UR
 ---
 
 <!-- Reviews -->

@@ -2,6 +2,8 @@
 import { siteConfig } from '@/site-config'
 import PromotionalVideo from '@/assets/videos/promotional.mp4'
 const { featured } = Astro.props
+
+const base = import.meta.env.BASE_URL
 ---
 
 <div class='bg-gray-900'>
@@ -32,7 +34,7 @@ const { featured } = Astro.props
 					>
 						Announcing our latest
 						<span class='font-bold text-emerald-400'> {featured[0].data.title} Tour</span>
-						<a href={`/tours/${featured[0].slug}`} class='font-semibold text-white'
+						<a href=`${base}/tours/${featured[0].slug}` class='font-semibold text-white'
 							><span class='absolute inset-0' aria-hidden='true'></span>Learn more <span
 								aria-hidden='true'>&rarr;</span
 							></a
@@ -51,11 +53,11 @@ const { featured } = Astro.props
 					</p>
 					<div class='mt-10 flex items-center justify-center gap-x-6'>
 						<a
-							href='/tours'
+							href=`${base}/tours`
 							class='rounded-md bg-emerald-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400'
 							>Browse our tours</a
 						>
-						<a href='/about' class='text-sm/6 font-semibold text-white'
+						<a href=`${base}/about` class='text-sm/6 font-semibold text-white'
 							>Learn more <span aria-hidden='true'>&rarr;</span></a
 						>
 					</div>
