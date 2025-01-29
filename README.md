@@ -4,49 +4,28 @@
 
 <hr/>
 
-<h3 align="center">
- ⭐ Leave a star if you like this project! ⭐️
-</h3>
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fdanielcgilibert%2Fblog-template)
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/danielcgilibert/blog-template)
-
 </div>
 
 ## 📌 Table Of Contents
 
-1. [Demo](#-Demo)
-2. [CMS](#-Tina-CMS)
-3. [Features](#-Features)
-4. [Roadmap](#-Roadmap)
-5. [Stack](#-Stack)
-6. [Running locally](#-Running-Locally)
-7. [Configure](#-Configure)
-8. [Categories](#-Adding-a-category)
-9. [Tours](#-Adding-a-tour)
-10. [Draft](#-Activating-draft-mode)
-11. [FrontMatter](#-Frontmatter)
-12. [CLI](#-Commands)
-13. [Contributors](#-Contributors)
-
-## 💻 Demo
-
-Check out the [Demo](https://blog-template-gray.vercel.app/), hosted on Vercel
-<br/>
-
-https://github.com/danielcgilibert/blog-template/assets/44746462/56b8399e-cc5b-45a8-b9d2-d69833ecadb1
+1. [CMS](#-Tina-CMS)
+2. [Features](#-Features)
+3. [Roadmap](#-Roadmap)
+4. [Stack](#-Stack)
+5. [Running locally](#-Running-Locally)
+6. [Configure](#-Configure)
+7. [Categories](#-Adding-a-category)
+8. [Tours](#-Adding-a-tour)
+9. [Draft](#-Activating-draft-mode)
+10. [FrontMatter](#-Frontmatter)
+11. [CLI](#-Commands)
+12. [Contributors](#-Contributors)
 
 ## 🦙 Tina CMS
 
 By default, this template comes pre-configured with Tina CMS.
 
 Now you can create your tours directly from the CMS without the need to do it manually.
-
-If you decide to use Tina, it's not necessary to add any properties to the Markdown files, Tina does it automatically.
-
-Example:
-
-https://github.com/danielcgilibert/blog-template/assets/44746462/51ae324c-d383-40be-9b16-db159d1af15d
 
 The documentation for Tina CMS can be found [here](https://tina.io/docs/)
 
@@ -82,19 +61,10 @@ The documentation for Tina CMS can be found [here](https://tina.io/docs/)
 - ✅ ViewTransition (new)
 - ✅ Disqus comments (new)
 
-## 🛣️ Roadmap
-
-- ❌ Add tour author
-- ❌ Add customization with colors
-- ❌ Add filters for reading time, date...
-- ❌ More sharing options
-- ❌ Internationalization (i18n)
-
 ## ⚙️ Stack
 
 - [**ASTRO** + **Typescript**](https://astro.build/) - Astro is the all-in-one web framework designed for speed.
 - [**Tailwind CSS** + **Tailwind-Merge** + **clsx**](https://tailwindcss.com/) - Tailwind CSS is a utility-first CSS framework.
-- [**Tabler Icons**](https://tabler-icons.io/i/) - A open source SVG icons.
 - [**Eslint**](https://eslint.org/) - ESLint is an open source project that helps you find and fix problems.
 - [**Prettier**](https://prettier.io/) - Code formatter.
 - [**Search Library**](https://pagefind.app/) - Static search library integration.
@@ -156,40 +126,6 @@ Adding a tour is as simple as adding a .md or .mdx file to the blog folder at th
 
 For example, if you have a file named **jsx-and-react.md**, it will be transformed into: **http://yourdomain.com/tour/jsx-and-react/**
 
-## 📝 Activating draft mode
-
-To activate draft mode, add the property **draft: true** to the file, and it will no longer be displayed on the blog.
-
-Example :
-
-```ts
-title: MacBook Pro 2022
-description: 'The new MacBook Pro 2022 is here. With the Apple M2 chip, a new design, and more, the new MacBook Pro is the best laptop Apple has ever made.'
-pubDate: 'Jul 02 2022'
-heroImage: '../../assets/bg.jpg'
-category: 'Category 1'
-tags: ['JavaScript', 'css', 'HTML5', 'GitHub']
-draft: true <---
-```
-
-## ⚡️ Frontmatter
-
-## Required properties:
-
-- Title
-- Description
-- pubDate
-- heroImage (tour cover)
-- category (Choose a category from src/data/categories.ts)
-
-## Optional properties:
-
-- draft (no need to include it, by default it's false)
-- tags
-
-> The schema for tours is located at src/content/config.ts. You can modify any parameter, for example, by adding a maximum of 80 characters for titles: title: z.string().max(80).
-> For more information, refer to the zod documentation.
-
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
@@ -205,12 +141,6 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm run sync`         | Generates TypeScript types for all Astro modules. [Learn more](https://docs.astro.build/en/reference/cli-reference/#astro-sync). |
 | `pnpm run lint`         | Lint with ESLint                                                                                                                 |
 
-## 👋 Contributors
-
-<a href="https://github.com/danielcgilibert/blog-template/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=danielcgilibert/blog-template" />
-</a>
-
 # Roadmap
 
 - [x] About Page with Google Maps and Social Link (Web3Forms)
@@ -223,10 +153,11 @@ All commands are run from the root of the project, from a terminal:
 - [x] Remove unneeded package
 - [x] Make langkwai thing optional
 - [x] Hide dialog at medium breakpoints
+- [x] Finalize Tina CMS
+- [x] Astro Optimizations
+- [x] Flesh out country page + add country card
+- [x] Add specific page for each city
 - [ ] Web3Forms for Contact Forms
-- [ ] Finalize Tina CMS
-- [ ] Flesh out country page + add country card
-- [ ] Add specific page for each city
 - [ ] navigation Links: home, about us, tours, contact
 - [ ] put all countries under tours
 - [ ] put all countries under tours
@@ -234,10 +165,8 @@ All commands are run from the root of the project, from a terminal:
 - [ ] Redo README
 - [ ] Fix hosting issues
 - [ ] Setup organization
-- [x] Astro Optimizations
 - [ ] Change sign in color
 - [ ] Finalize Github Organization
 - [ ] Finalize Readme and Git Repo Details
 - [ ] Fix view on large breakpoints
 - [ ] Fix github page mappings at paths
-- [ ] Remove .env.local
