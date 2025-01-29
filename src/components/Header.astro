@@ -5,6 +5,8 @@ import { SignedIn, SignedOut, UserButton, SignInButton } from '@clerk/astro/comp
 import { DoorOpen, Menu, User } from 'lucide-astro'
 import { Image } from 'astro:assets'
 
+const base = import.meta.env.BASE_URL
+
 export const prerender = false
 
 const links = [
@@ -32,8 +34,8 @@ const links = [
 <header class='fixed inset-x-0 top-0 z-40 bg-gradient-to-b from-teal-600/60 to-teal-400/0'>
 	<nav class='flex items-center justify-between p-4 pl-2 py-2 lg:px-8' aria-label='Global'>
 		<div class='flex lg:flex-1'>
-			<a href=`${siteConfig.base}/` class='-m-1.5 p-1.5'>
-				{siteConfig.base}
+			<a href=`${base}/` class='-m-1.5 p-1.5'>
+				{base}
 				<span class='sr-only'>{siteConfig.company.name}</span>
 				<Image class='h-16 w-auto' src={Logo} alt='' />
 			</a>
