@@ -8,9 +8,10 @@ export async function GET(context: any) {
 		title: siteConfig.title,
 		description: siteConfig.description,
 		site: context.site,
-		items: tours.map((tour) => ({
-			...tour.data,
-			link: `tour/${tour.slug}/`
-		}))
+		// items: tours.map((tour) => ({
+		// 	...tour.data,
+		// 	link: `tour/${tour.slug}/`
+		// })),
+		items: []
 	})
 }
