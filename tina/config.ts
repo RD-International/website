@@ -14,7 +14,8 @@ export default defineConfig({
 
 	build: {
 		outputFolder: 'admin',
-		publicFolder: 'public'
+		publicFolder: 'public',
+		basePath: 'website'
 	},
 	media: {
 		tina: {

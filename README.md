@@ -22,7 +22,12 @@
 - [x] Finalize Readme and Git Repo Details
 - [x] Fix view on large breakpoints
 - [x] Fix github page mappings at paths
+- [x] Fix Get in Touch Section
+- [x] Redo README
+- [x] Fix hosting issues
 - [ ] Web3Forms for Contact Forms
-- [ ] Fix Get in Touch Section
-- [ ] Redo README
-- [ ] Fix hosting issues
+- [ ] Move ids and api keys to env file
+- [ ] Finalize Email for Web3Forms
+- [ ] Finalize Whatsapp Message
+- [ ] Move Social Login to siteConfig
+- [ ] Move clientId and secret to environment variables

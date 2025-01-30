@@ -1,4 +1,4 @@
-<form action='#' method='POST' class='lg:flex-auto'>
+<form action='#' id='form' method='POST' class='lg:flex-auto'>
 	<div class='grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2'>
 		<div class='col-span-2'>
 			<label for='name' class='block text-sm/6 font-semibold text-gray-900'>Full Name</label>
@@ -106,10 +106,66 @@
 		</div>
 	</div>
 	<div class='mt-10'>
+		<a href='whatsapp://send?phone=+601123049307&text=example'>Send Whatsapp Message</a>
 		<button
 			type='submit'
 			class='block w-full rounded-md bg-teal-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600'
 			>Book Tour</button
 		>
 	</div>
+
+	<div id='result'></div>
 </form>
+<script is:inline>
+	const form = document.getElementById('form')
+	const result = document.getElementById('result')
+
+	function sendWhatsappMessage(formData) {
+		const checkinDate = formData.checkInDate.toString()
+		const name = formData.name
+		const url = window.location.toString()
+		const message = `${url}
+    Hello, I am ${name}. I saw the ${name} tour and I would like to book it. We are ${formData.adultCount + formData.childCount} many, ${formData.adultCount} adults and ${formData.childrenCount} children, checking in at ${checkinDate} and leaving at _.`
+		window.location.replace(`whatsapp://send/?phone=+601123049307&text=${message}`)
+	}
+
+	form.addEventListener('submit', function (e) {
+		const formData = new FormData(form)
+		e.preventDefault()
+
+		const object = Object.fromEntries(formData)
+		const json = JSON.stringify(object)
+		sendWhatsappMessage(object)
+		return
+
+		result.innerHTML = 'Please wait...'
+
+		fetch('https://api.web3forms.com/submit', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				Accept: 'application/json'
+			},
+			body: json
+		})
+			.then(async (response) => {
+				let json = await response.json()
+				if (response.status == 200) {
+					result.innerHTML = json.message
+				} else {
+					console.log(response)
+					result.innerHTML = json.message
+				}
+			})
+			.catch((error) => {
+				console.log(error)
+				result.innerHTML = 'Something went wrong!'
+			})
+			.then(function () {
+				form.reset()
+				setTimeout(() => {
+					result.style.display = 'none'
+				}, 3000)
+			})
+	})
+</script>
