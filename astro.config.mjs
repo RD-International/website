@@ -11,6 +11,9 @@ import clerk from '@clerk/astro'
 export default defineConfig({
 	site: siteConfig.site,
 	base: siteConfig.base,
+	redirects: {
+		'/admin': `${siteConfig.base}/admin/index.html`
+	},
 	markdown: {
 		remarkPlugins: [remarkReadingTime],
 		drafts: true,
