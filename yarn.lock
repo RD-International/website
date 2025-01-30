@@ -679,44 +679,44 @@
   resolved "https://registry.yarnpkg.com/@braintree/sanitize-url/-/sanitize-url-6.0.4.tgz#923ca57e173c6b232bbbb07347b1be982f03e783"
   integrity sha512-s3jaWicZd0pkP0jf5ysyHUI/RE7MHos6qlToFcGWXVp+ykHOy77OUMrfbgJ9it2C5bow7OIQwYYaHjk9XlBQ2A==
 
-"@clerk/astro@^2.1.7":
-  version "2.1.7"
-  resolved "https://registry.yarnpkg.com/@clerk/astro/-/astro-2.1.7.tgz#3aa9eb6e5743b815d78e69b8c52f5957a4320a96"
-  integrity sha512-ixGD4STQZh1Rxs1G3VKT8uvId9at5DPOBXulAouDdjtK0fdHZ+nLf7vzFJ91bpBtAuwPtYSDviDAPUDUvsyRCA==
+"@clerk/astro@^2.1.16":
+  version "2.1.16"
+  resolved "https://registry.yarnpkg.com/@clerk/astro/-/astro-2.1.16.tgz#13c819b3809ed6fcc15bbe8959ce76544112d7ea"
+  integrity sha512-nAWmAgBbytWRReNPxWfAEsDjzLipwgAJLk0k1etl2RdH1aQ/oevnhdvcGKEFOhP4N4m66rY5PS2OfdeP9FI8TA==
   dependencies:
-    "@clerk/backend" "^1.22.0"
-    "@clerk/shared" "^2.20.6"
-    "@clerk/types" "^4.40.2"
+    "@clerk/backend" "^1.23.8"
+    "@clerk/shared" "^2.20.15"
+    "@clerk/types" "^4.44.1"
     nanoid "5.0.9"
     nanostores "0.11.3"
 
-"@clerk/backend@^1.22.0":
-  version "1.22.0"
-  resolved "https://registry.yarnpkg.com/@clerk/backend/-/backend-1.22.0.tgz#80a721eae4d4d523569fcbd1dd0af46adb395e02"
-  integrity sha512-nu6dAigcsqMLt2K+seBKb+goWzsKgxylFA9O9vcXPeNKk+rsrFPQVIv/X1Kt5O/IgZNbmRFch4MSF9XU6rqIRw==
+"@clerk/backend@^1.23.8":
+  version "1.23.8"
+  resolved "https://registry.yarnpkg.com/@clerk/backend/-/backend-1.23.8.tgz#8fd936cc217d3de8a7791929bd80e63d2e6c5b4d"
+  integrity sha512-M5wGmkNItDAg9A2/X4O1RTLV2tH94YKpJkjpwErondTUhtR+UbaW1O0GMahp7U2sFEFoVq6Avq/qXU+w1VDzfg==
   dependencies:
-    "@clerk/shared" "^2.20.6"
-    "@clerk/types" "^4.40.2"
+    "@clerk/shared" "^2.20.15"
+    "@clerk/types" "^4.44.1"
     cookie "1.0.2"
     snakecase-keys "8.0.1"
     tslib "2.4.1"
 
-"@clerk/shared@^2.20.6":
-  version "2.20.6"
-  resolved "https://registry.yarnpkg.com/@clerk/shared/-/shared-2.20.6.tgz#b46aef93d224e5da1424bd4e299189de847d641b"
-  integrity sha512-DnxXbPPUNQQMOlAQFEn0iAiwPtjO4yKVabSgs+qn86VsNWWHnG//uHJzB6nmDk8n5RYGe/vMum73/Lz/Pg1SgQ==
+"@clerk/shared@^2.20.15":
+  version "2.20.15"
+  resolved "https://registry.yarnpkg.com/@clerk/shared/-/shared-2.20.15.tgz#b1b40942b3bf4bd7823f1363c91e27a5217085da"
+  integrity sha512-nFCt64Gkq6irGNTjVWHRCJnCyymLPYJTmfAusl9uENxFoy2BJ24dR9jIVoNLC8iKbDZTSRakOwiOjjXvZL9tJA==
   dependencies:
-    "@clerk/types" "^4.40.2"
+    "@clerk/types" "^4.44.1"
     dequal "2.0.3"
     glob-to-regexp "0.4.1"
     js-cookie "3.0.5"
     std-env "^3.7.0"
     swr "^2.2.0"
 
-"@clerk/types@^4.40.2":
-  version "4.40.2"
-  resolved "https://registry.yarnpkg.com/@clerk/types/-/types-4.40.2.tgz#1fb9b0f4082d5ffe54054f34c2c079002e291bdb"
-  integrity sha512-Jkt8YiqtFSRvCsN+8/MR2V0Cl83xtuqZVuV6ygQ6VJeSbmmFP0q5CSowlJ8mon2bELrlUnWH011dhAjELmvXqg==
+"@clerk/types@^4.44.1":
+  version "4.44.1"
+  resolved "https://registry.yarnpkg.com/@clerk/types/-/types-4.44.1.tgz#2ac2bf525ef4fc8fa42748466b13969f8798444e"
+  integrity sha512-CP+ABOzzHkVVbFMTZpcf/hC2rewtVJOxeFBbvmK0p2emDJwp3tkyGhw03mrt4yiEpeEgdD3n+N0weEadVFu3mw==
   dependencies:
     csstype "3.1.1"
 
