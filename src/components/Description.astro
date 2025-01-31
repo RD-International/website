@@ -36,6 +36,13 @@ const base = import.meta.env.BASE_URL
 					>
 				</div>
 			</div>
+
+			<div class='flex sm:hidden flex-col flex-wrap items-start justify-end gap-6 sm:gap-8'>
+				<Image src={Image2} alt='' class='w-full rounded-2xl bg-gray-50 object-cover' />
+				<Image src={Image1} alt='' class='w-full rounded-2xl bg-gray-50 object-cover' />
+				<Image src={Image3} alt='' class='w-full rounded-2xl bg-gray-50 object-cover' />
+				<Image src={Image4} alt='' class='w-full rounded-2xl bg-gray-50 object-cover' />
+			</div>
 			<div class='hidden sm:flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents'>
 				<div class='w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end'>
 					<Image
@@ -69,15 +76,6 @@ const base = import.meta.env.BASE_URL
 						/>
 					</div>
 				</div>
-			</div>
-
-			<div
-				class='flex flex-col sm:hidden flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents'
-			>
-				<Image src={Image2} alt='' class='w-full rounded-2xl bg-gray-50 object-cover' />
-				<Image src={Image1} alt='' class='w-full rounded-2xl bg-gray-50 object-cover' />
-				<Image src={Image3} alt='' class='w-full rounded-2xl bg-gray-50 object-cover' />
-				<Image src={Image4} alt='' class='w-full rounded-2xl bg-gray-50 object-cover' />
 			</div>
 		</div>
 	</div>

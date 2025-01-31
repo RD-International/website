@@ -15,6 +15,7 @@ interface SiteConfig {
 			firstLineAddress: string
 			secondLineAddress: string
 		}
+		whatsappNumber: string
 		phoneNumber: string
 		email: string
 		estabilished: number
@@ -44,6 +45,7 @@ export const siteConfig: SiteConfig = {
 			firstLineAddress: 'Mavis Island',
 			secondLineAddress: 'Chicago, IL, 99191'
 		},
+		whatsappNumber: '+601123049307',
 		phoneNumber: '+1 (555) 234-5678',
 		email: 'hello@example.com',
 		estabilished: 2001,

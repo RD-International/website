@@ -9,6 +9,11 @@ import WhatsappIcon from '@/assets/images/whatsapp.svg'
 import TikTokIcon from '@/assets/images/tiktok.svg'
 import { Mail, Map, MapPin, MapPinned, Phone } from 'lucide-astro'
 import ContactForm from './ContactForm.astro'
+
+const whatsappMessage = `Hello, can you tell me more about your tours?`
+const number = siteConfig.company.whatsappNumber
+const encodedMessage = encodeURIComponent(whatsappMessage)
+
 const SocialLinks = [
 	{
 		image: InstagramIcon,
@@ -20,20 +25,20 @@ const SocialLinks = [
 		image: FacebookIcon,
 		text: 'rd_travels',
 		imageAlt: 'Instagram',
-		href: 'https://www.instagram.com/rd_intl/'
+		href: 'https://www.facebook.com/profile.php?id=61566433043845'
 	},
 	{
 		image: WhatsappIcon,
 		text: siteConfig.company.phoneNumber,
 		imageAlt: 'Instagram',
-		href: 'https://www.instagram.com/rd_intl/'
+		href: `https://wa.me/${number}?text=${encodedMessage}}`
 	},
 
 	{
 		image: TikTokIcon,
 		text: '@rd_travels',
 		imageAlt: 'Instagram',
-		href: 'https://www.instagram.com/rd_intl/'
+		href: 'https://www.tiktok.com/@rd_tours'
 	}
 ]
 ---
