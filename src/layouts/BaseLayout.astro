@@ -8,11 +8,17 @@ import TwSizeIndicator from '@/components/TwSizeIndicator'
 import EditInCMS from '@/components/EditInCMS'
 const { title, description, image, articleDate } = Astro.props
 const { center = true } = Astro.props
+import Image4 from '@/assets/images/4.jpg'
 ---
 
 <html lang='en' class='scroll-smooth'>
 	<head>
-		<BaseHead title={title} description={description} ogImage={image} articleDate={articleDate} />
+		<BaseHead
+			title={title}
+			description={description}
+			ogImage={Image4.src}
+			articleDate={articleDate}
+		/>
 		<ProviderTheme />
 		<ProviderAnimations />
 	</head>
