@@ -71,12 +71,14 @@ jobs:
         env:
           TINA_PUBLIC_CLIENT_ID: ${{ secrets.TINA_PUBLIC_CLIENT_ID }}
           TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
-        run: yarn tinacms build
+        run:  yarn tinacms build
         # This assumes that your "build" script in your
         # package.json is "tinacms build"
       - name: Build with Astro
+        env:
+          WEB3FORMS_ACCESS_KEY: ${{ secrets.WEB3FORMS_ACCESS_KEY }}
         run: |
-          ${{ steps.detect-package-manager.outputs.runner }} astro build \
+          echo $WEB3FORMS_ACCESS_KEY; ${{ steps.detect-package-manager.outputs.runner }} astro build \
             --site "${{ steps.pages.outputs.origin }}" \
             --base "${{ steps.pages.outputs.base_path }}"
         working-directory: ${{ env.BUILD_PATH }}
