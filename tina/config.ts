@@ -1,5 +1,5 @@
 import { CATEGORIES } from '../src/data/categories.ts'
-import { defineConfig, wrapFieldsWithMeta } from 'tinacms'
+import { defineConfig } from 'tinacms'
 import CountryReference from './CountryReference.tsx'
 
 // Your hosting provider likely exposes this as an environment variable
