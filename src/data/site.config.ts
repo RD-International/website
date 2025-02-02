@@ -45,9 +45,9 @@ export const siteConfig: SiteConfig = {
 			firstLineAddress: 'Mavis Island',
 			secondLineAddress: 'Chicago, IL, 99191'
 		},
-		whatsappNumber: '+601123049307',
-		phoneNumber: '+1 (555) 234-5678',
-		email: 'hello@example.com',
+		whatsappNumber: '+60182327147',
+		phoneNumber: '+60182327147',
+		email: 'rdinternn@gmail.com',
 		estabilished: 2001,
 		members: [
 			{
