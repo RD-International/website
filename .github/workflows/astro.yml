@@ -5,9 +5,6 @@
 name: Deploy Astro site to Pages
 
 
-env:
-  TINA_PUBLIC_CLIENT_ID: ${{ secrets.TINA_PUBLIC_CLIENT_ID }}
-  TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
 on:
   # Runs on pushes targeting the default branch
   push:
@@ -31,6 +28,8 @@ concurrency:
 env:
   BUILD_PATH: "." # default value when not using subfolders
   # BUILD_PATH: subfolder
+  TINA_PUBLIC_CLIENT_ID: ${{ secrets.TINA_PUBLIC_CLIENT_ID }}
+  TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
 
 jobs:
   build:
