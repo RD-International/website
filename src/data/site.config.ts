@@ -42,8 +42,8 @@ export const siteConfig: SiteConfig = {
 		name: 'RD International',
 		shortName: 'RD Intl.',
 		address: {
-			firstLineAddress: 'Mavis Island',
-			secondLineAddress: 'Chicago, IL, 99191'
+			firstLineAddress: 'SkyPark @ Cyberjaya, Jalan Teknokrat 1',
+			secondLineAddress: 'Cyberjaya, Selangor, 63000'
 		},
 		whatsappNumber: '+60182327147',
 		phoneNumber: '+60182327147',

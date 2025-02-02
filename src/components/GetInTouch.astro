@@ -12,7 +12,6 @@ import ContactForm from './ContactForm.astro'
 
 const whatsappMessage = `Hello, can you tell me more about your tours?`
 const number = siteConfig.company.whatsappNumber
-const encodedMessage = encodeURIComponent(whatsappMessage)
 
 const SocialLinks = [
 	{
@@ -31,7 +30,7 @@ const SocialLinks = [
 		image: WhatsappIcon,
 		text: siteConfig.company.phoneNumber,
 		imageAlt: 'Instagram',
-		href: `https://wa.me/${number}?text=${encodedMessage}}`
+		href: `https://wa.me/${number}?text=${whatsappMessage}`
 	},
 
 	{
@@ -92,7 +91,7 @@ const SocialLinks = [
 						<div class='flex gap-x-4'>
 							<dt class='flex-none'>
 								<span class='sr-only'>Address</span>
-								<MapPinned />
+								<MapPinned stroke='gray' />
 							</dt>
 							<dd>
 								{siteConfig.company.address.firstLineAddress}<br />{
@@ -103,10 +102,10 @@ const SocialLinks = [
 						<div class='flex gap-x-4'>
 							<dt class='flex-none'>
 								<span class='sr-only'>Telephone</span>
-								<Phone />
+								<Phone stroke='gray' />
 							</dt>
 							<dd>
-								<a class='hover:text-gray-900' href={siteConfig.company.phoneNumber}
+								<a class='hover:text-gray-900' href=`tel:${siteConfig.company.phoneNumber}`
 									>{siteConfig.company.phoneNumber}</a
 								>
 							</dd>
@@ -114,7 +113,7 @@ const SocialLinks = [
 						<div class='flex gap-x-4'>
 							<dt class='flex-none'>
 								<span class='sr-only'>Email</span>
-								<Mail />
+								<Mail stroke='gray' />
 							</dt>
 							<dd>
 								<a class='hover:text-gray-900' href={`mailto:${siteConfig.company.email}`}
