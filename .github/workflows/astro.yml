@@ -33,6 +33,8 @@ env:
 
 jobs:
   build:
+
+    secrets: inherit # <= this one
     name: Build
     runs-on: ubuntu-latest
     steps:
