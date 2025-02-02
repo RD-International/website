@@ -32,11 +32,16 @@
 	},
 	"dependencies": {
 		"@astrojs/node": "^9.0.1",
+		"@astrojs/react": "^4.2.0",
 		"@astrojs/rss": "4.0.1",
 		"@clerk/astro": "^2.1.7",
+		"@types/react": "^19.0.8",
+		"@types/react-dom": "^19.0.3",
 		"astro": "^4.2.6",
 		"astro-font": "^0.0.72",
-		"lucide-astro": "^0.471.0"
+		"lucide-astro": "^0.471.0",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0"
 	},
 	"devDependencies": {
 		"@astrojs/mdx": "2.0.3",

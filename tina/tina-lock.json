@@ -131,6 +131,7 @@
 						"collections": ["countries"],
 						"description": "Country for this tour",
 						"required": true,
+						"ui": {},
 						"namespace": ["tour", "country"],
 						"searchable": true,
 						"uid": false

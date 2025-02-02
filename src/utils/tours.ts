@@ -23,7 +23,7 @@ export const getCategories = async () => {
 export const getTourByCountry = async (country: string) => {
 	const tours = await getTours()
 	const lowercaseCountry = country.toLowerCase()
-	return await tours
+	return tours
 		.filter((tour) => !tour.data.draft)
 		.filter((tour) => {
 			return tour.data.country.slug.toLowerCase() == lowercaseCountry

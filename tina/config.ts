@@ -1,5 +1,6 @@
 import { CATEGORIES } from '../src/data/categories.ts'
-import { defineConfig } from 'tinacms'
+import { defineConfig, wrapFieldsWithMeta } from 'tinacms'
+import CountryReference from './CountryReference.tsx'
 
 // Your hosting provider likely exposes this as an environment variable
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || 'main'
@@ -126,7 +127,10 @@ export default defineConfig({
 						type: 'reference',
 						collections: ['countries'],
 						description: 'Country for this tour',
-						required: true
+						required: true,
+						ui: {
+							component: CountryReference
+						}
 					},
 					{
 						type: 'string',
