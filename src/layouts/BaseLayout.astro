@@ -6,7 +6,8 @@ import ProviderTheme from '@/components/ProviderTheme'
 import ProviderAnimations from '@/components/ProviderAnimations'
 import TwSizeIndicator from '@/components/TwSizeIndicator'
 import EditInCMS from '@/components/EditInCMS'
-const { title, description, image, articleDate } = Astro.props
+import Logo from '@/assets/images/logo.png'
+const { title, description, image = Logo.src, articleDate } = Astro.props
 const { center = true } = Astro.props
 ---
 
