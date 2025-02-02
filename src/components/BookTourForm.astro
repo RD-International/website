@@ -127,7 +127,7 @@ const number = siteConfig.company.whatsappNumber
 	function sendWhatsappMessage(formData) {
 		const { name, email, adultCount, childrenCount, checkInDate, checkOutDate, message } = formData
 		const url = window.location.toString()
-		const whatsappMessage = `Hello, I am ${name}.%0AI saw the ${tour.title} tour at the following link ${url} and I would like to book it.%0AWe are ${adultCount + childrenCount} many, ${adultCount} adults and ${childrenCount} children. We would like to check-in%0Ain at ${checkInDate} and leaving at ${checkOutDate}.%0AThis is my email : ${email}.`
+		const whatsappMessage = `Hello, I am ${name}.\nI saw the ${tour.title} tour at the following link ${url} and I would like to book it.\nWe are ${adultCount + childrenCount} many, ${adultCount} adults and ${childrenCount} children. We would like to check-in at ${checkInDate} and leaving at ${checkOutDate}.\nThis is my email : ${email}.`
 
 		const encodedMessage = encodeURIComponent(whatsappMessage)
 		window.location.replace(`https://wa.me/${number}?text=${encodedMessage}`)
