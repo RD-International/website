@@ -3,7 +3,9 @@ import { siteConfig } from '@/data/site.config'
 
 const { tour } = Astro.props
 
-const number = siteConfig.company.whatsappNumber
+const number = siteConfig.company.phoneNumbers.find(
+	(number) => number.whatsapp && number.booking
+)?.number
 ---
 
 <form action='#' id='form' method='POST' class='lg:flex-auto'>

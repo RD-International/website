@@ -1,6 +1,7 @@
 import { CATEGORIES } from '@/data/categories'
 import { getCollection, getEntry, type CollectionEntry } from 'astro:content'
 import type { Tour } from 'tina/__generated__/types'
+import settings from '/src/content/settings/index.json'
 
 export const getTours = async (max?: number) => {
 	const tours: CollectionEntry<'tours'>[] = await getCollection('tours')
@@ -38,6 +39,7 @@ export const filterToursByCategory = async (category: string) => {
 }
 
 export const getFeaturedTours = async () => {
-	const tours = await getTours()
-	return await tours.filter((tour) => !tour.data.draft).filter((tour) => tour.data.featured)
+	const tourId = settings.featuredTour
+	const tour = getEntry('tours', tourId)
+	return tour
 }

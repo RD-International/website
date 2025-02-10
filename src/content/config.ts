@@ -1,5 +1,6 @@
 import { defineCollection, reference, z } from 'astro:content'
 import { CATEGORIES } from '@/data/categories'
+import { file, glob } from 'astro/loaders'
 
 const countries = defineCollection({
 	// Type-check frontmatter using a schema

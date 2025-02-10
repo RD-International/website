@@ -1,11 +1,10 @@
 'use client'
 
-import type { ReferenceFieldProps } from 'node_modules/tinacms/dist/toolkit/fields/components/reference/model/reference-field-props'
-import React, { useState } from 'react'
+import React from 'react'
 import { Client, useCMS, wrapFieldsWithMeta } from 'tinacms'
 
-const CountryReference = wrapFieldsWithMeta(({ input }) => {
-	const collectionName = 'Countries'
+const TourSelect = wrapFieldsWithMeta(({ input }) => {
+	const collectionName = 'Tours'
 	const collectionString = collectionName.toLowerCase()
 	const connectionName = `${collectionString}Connection`
 	const [options, setOptions] = React.useState([])
@@ -24,7 +23,7 @@ const CountryReference = wrapFieldsWithMeta(({ input }) => {
             __typename
             ... on ${collectionName} {
               id
-              name
+              title
               
             }
           }
@@ -37,7 +36,7 @@ const CountryReference = wrapFieldsWithMeta(({ input }) => {
 			const nodes: any[] = []
 			res[connectionName].edges?.map((edge) => nodes.push(edge.node))
 			const opts = nodes.map((n) => ({
-				name: n.name,
+				name: n.title,
 				value: n.id.split('/').pop().split('.')[0]
 			}))
 			setOptions(opts)
@@ -48,15 +47,15 @@ const CountryReference = wrapFieldsWithMeta(({ input }) => {
 	return (
 		<div>
 			<div className='mt-2 grid grid-cols-1'>
+				{input.value}
 				<select
-					id='location'
-					name='location'
-					defaultValue='Canada'
+					id='featuredTour'
+					name='featuredTour'
 					onChange={input.onChange}
 					className='col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-blue-600 sm:text-sm/6'
 				>
 					{options.map((p, idx) => (
-						<option value={p.value} key={idx}>
+						<option value={p.value} key={idx} selected={p.value == input.value}>
 							{p.name}
 						</option>
 					))}
@@ -80,4 +79,4 @@ const CountryReference = wrapFieldsWithMeta(({ input }) => {
 	)
 })
 
-export default CountryReference
+export default TourSelect

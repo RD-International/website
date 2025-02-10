@@ -11,13 +11,12 @@ interface SiteConfig {
 	company: {
 		name: string
 		shortName: string
-		address: {
+		addresses: {
 			firstLineAddress: string
 			secondLineAddress: string
-		}
-		whatsappNumber: string
-		phoneNumber: string
-		email: string
+		}[]
+		phoneNumbers: { whatsapp: boolean; booking: boolean; number: string }[]
+		emails: string[]
 		estabilished: number
 		members: {
 			name: string
@@ -41,13 +40,24 @@ export const siteConfig: SiteConfig = {
 	company: {
 		name: 'RD International',
 		shortName: 'RD Intl.',
-		address: {
-			firstLineAddress: 'SkyPark @ Cyberjaya, Jalan Teknokrat 1',
-			secondLineAddress: 'Cyberjaya, Selangor, 63000'
-		},
-		whatsappNumber: '+60182327147',
-		phoneNumber: '+60182327147',
-		email: 'rdinternn@gmail.com',
+		addresses: [
+			{
+				firstLineAddress: 'SkyPark @ Cyberjaya, Jalan Teknokrat 1',
+				secondLineAddress: 'Cyberjaya, Selangor, 63000'
+			},
+
+			{
+				firstLineAddress: 'RD Maldives Pvt. Ltd.',
+				secondLineAddress: 'M. Shaamy Villa, 3rd Floor'
+			}
+		],
+
+		phoneNumbers: [
+			{ booking: true, whatsapp: true, number: '+60182327147' },
+			{ whatsapp: true, booking: false, number: '+9609411751' }
+		],
+
+		emails: ['rdinternn@gmail.com', 'info@rd.tours'],
 		estabilished: 2001,
 		members: [
 			{

@@ -11,7 +11,6 @@ import { Mail, Map, MapPin, MapPinned, Phone } from 'lucide-astro'
 import ContactForm from './ContactForm.astro'
 
 const whatsappMessage = `Hello, can you tell me more about your tours?`
-const number = siteConfig.company.whatsappNumber
 
 const SocialLinks = [
 	{
@@ -25,12 +24,6 @@ const SocialLinks = [
 		text: 'rd_travels',
 		imageAlt: 'Instagram',
 		href: 'https://www.facebook.com/profile.php?id=61566433043845'
-	},
-	{
-		image: WhatsappIcon,
-		text: siteConfig.company.phoneNumber,
-		imageAlt: 'Instagram',
-		href: `https://wa.me/${number}?text=${whatsappMessage}`
 	},
 
 	{
@@ -88,39 +81,63 @@ const SocialLinks = [
 
 				<div class='flex flex-col'>
 					<dl class='mt-10 space-y-4 text-sm text-gray-600 order-2 sm:order-1'>
-						<div class='flex gap-x-4'>
-							<dt class='flex-none'>
-								<span class='sr-only'>Address</span>
-								<MapPinned stroke='gray' />
-							</dt>
-							<dd>
-								{siteConfig.company.address.firstLineAddress}<br />{
-									siteConfig.company.address.secondLineAddress
-								}
-							</dd>
-						</div>
-						<div class='flex gap-x-4'>
-							<dt class='flex-none'>
-								<span class='sr-only'>Telephone</span>
-								<Phone stroke='gray' />
-							</dt>
-							<dd>
-								<a class='hover:text-gray-900' href=`tel:${siteConfig.company.phoneNumber}`
-									>{siteConfig.company.phoneNumber}</a
-								>
-							</dd>
-						</div>
-						<div class='flex gap-x-4'>
-							<dt class='flex-none'>
-								<span class='sr-only'>Email</span>
-								<Mail stroke='gray' />
-							</dt>
-							<dd>
-								<a class='hover:text-gray-900' href={`mailto:${siteConfig.company.email}`}
-									>{siteConfig.company.email}</a
-								>
-							</dd>
-						</div>
+						{
+							siteConfig.company.addresses.map((address) => (
+								<div class='flex gap-x-4'>
+									<dt class='flex-none'>
+										<span class='sr-only'>Address</span>
+										<MapPinned stroke='gray' />
+									</dt>
+									<dd>
+										{address.firstLineAddress}
+										<br />
+										{address.secondLineAddress}
+									</dd>
+								</div>
+							))
+						}
+						whatsappNumber
+						{
+							siteConfig.company.phoneNumbers.map((phonenumber) => (
+								<div class='flex gap-x-4'>
+									<dt class='flex-none'>
+										<span class='sr-only'>Telephone</span>
+										{phonenumber.whatsapp ? (
+											<Image src={WhatsappIcon} alt='link.imageAlt' class='w-6 h-6' />
+										) : (
+											<Phone stroke='gray' />
+										)}
+									</dt>
+									<dd>
+										<a
+											class='hover:text-gray-900'
+											href={
+												phonenumber.whatsapp
+													? `https://wa.me/${phonenumber.number}?text=${whatsappMessage}`
+													: `tel:${phonenumber.number}`
+											}
+										>
+											{phonenumber.number}
+										</a>
+									</dd>
+								</div>
+							))
+						}
+						{
+							siteConfig.company.emails.map((email) => (
+								<div class='flex gap-x-4'>
+									<dt class='flex-none'>
+										<span class='sr-only'>Email</span>
+										<Mail stroke='gray' />
+									</dt>
+									<dd>
+										<a class='hover:text-gray-900' href={`mailto:${email}`}>
+											{email}
+										</a>
+									</dd>
+								</div>
+							))
+						}
 
 						{
 							SocialLinks.map((link) => (

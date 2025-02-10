@@ -4,6 +4,28 @@
 		"meta": { "flags": ["experimentalData"] },
 		"collections": [
 			{
+				"label": "Site Settings",
+				"name": "siteSettings",
+				"path": "src/content/settings",
+				"format": "json",
+				"fields": [
+					{
+						"label": "Featured Tour",
+						"name": "featuredTour",
+						"type": "reference",
+						"collections": ["tours"],
+						"description": "Tour to be featured on the landing page",
+						"required": true,
+						"ui": {},
+						"namespace": ["siteSettings", "featuredTour"],
+						"searchable": true,
+						"uid": false
+					}
+				],
+				"ui": { "allowedActions": { "create": false, "delete": false } },
+				"namespace": ["siteSettings"]
+			},
+			{
 				"name": "countries",
 				"label": "Countries",
 				"path": "src/content/countries",
@@ -43,7 +65,7 @@
 				"namespace": ["countries"]
 			},
 			{
-				"name": "tour",
+				"name": "tours",
 				"label": "Tour",
 				"path": "src/content/tours",
 				"format": "mdx",
@@ -54,7 +76,7 @@
 						"required": true,
 						"name": "heroImage",
 						"description": "The image used for the cover of the tour",
-						"namespace": ["tour", "heroImage"],
+						"namespace": ["tours", "heroImage"],
 						"searchable": false,
 						"uid": false
 					},
@@ -65,7 +87,7 @@
 						"label": "Category",
 						"description": "Select an category for this tour",
 						"options": ["Adventure", "City", "Cultural", "Nature", "Sight Seeing", "Historical"],
-						"namespace": ["tour", "category"],
+						"namespace": ["tours", "category"],
 						"searchable": true,
 						"uid": false
 					},
@@ -75,7 +97,7 @@
 						"required": true,
 						"name": "description",
 						"description": "A short description of the tour",
-						"namespace": ["tour", "description"],
+						"namespace": ["tours", "description"],
 						"searchable": true,
 						"uid": false
 					},
@@ -84,7 +106,7 @@
 						"name": "pubDate",
 						"label": "Publication Date",
 						"required": true,
-						"namespace": ["tour", "pubDate"],
+						"namespace": ["tours", "pubDate"],
 						"searchable": true,
 						"uid": false
 					},
@@ -93,7 +115,7 @@
 						"label": "Draft",
 						"type": "boolean",
 						"description": "If this is checked the tour will not be published",
-						"namespace": ["tour", "draft"],
+						"namespace": ["tours", "draft"],
 						"searchable": true,
 						"uid": false
 					},
@@ -102,7 +124,7 @@
 						"label": "Minimum People Count",
 						"type": "number",
 						"description": "The amount of people needed for this package",
-						"namespace": ["tour", "minPeopleCount"],
+						"namespace": ["tours", "minPeopleCount"],
 						"searchable": true,
 						"uid": false
 					},
@@ -111,7 +133,7 @@
 						"label": "Price",
 						"type": "number",
 						"description": "Price for the tour",
-						"namespace": ["tour", "price"],
+						"namespace": ["tours", "price"],
 						"searchable": true,
 						"uid": false
 					},
@@ -120,7 +142,7 @@
 						"label": "Duration",
 						"type": "string",
 						"description": "Duration of the tour package",
-						"namespace": ["tour", "duration"],
+						"namespace": ["tours", "duration"],
 						"searchable": true,
 						"uid": false
 					},
@@ -132,7 +154,7 @@
 						"description": "Country for this tour",
 						"required": true,
 						"ui": {},
-						"namespace": ["tour", "country"],
+						"namespace": ["tours", "country"],
 						"searchable": true,
 						"uid": false
 					},
@@ -142,7 +164,7 @@
 						"required": true,
 						"label": "City",
 						"description": "City for this tour",
-						"namespace": ["tour", "city"],
+						"namespace": ["tours", "city"],
 						"searchable": true,
 						"uid": false
 					},
@@ -152,7 +174,7 @@
 						"label": "Title",
 						"isTitle": true,
 						"required": true,
-						"namespace": ["tour", "title"],
+						"namespace": ["tours", "title"],
 						"searchable": true,
 						"uid": false
 					},
@@ -171,22 +193,22 @@
 										"label": "SButton",
 										"name": "children",
 										"isBody": true,
-										"namespace": ["tour", "SButton", "SButton", "children"],
+										"namespace": ["tours", "SButton", "SButton", "children"],
 										"searchable": true,
 										"parser": { "type": "mdx" },
 										"uid": false
 									}
 								],
-								"namespace": ["tour", "SButton", "SButton"]
+								"namespace": ["tours", "SButton", "SButton"]
 							}
 						],
-						"namespace": ["tour", "SButton"],
+						"namespace": ["tours", "SButton"],
 						"searchable": true,
 						"parser": { "type": "mdx" },
 						"uid": false
 					}
 				],
-				"namespace": ["tour"]
+				"namespace": ["tours"]
 			}
 		],
 		"config": { "media": { "tina": { "publicFolder": "", "mediaRoot": "/src/assets/images" } } }
@@ -195,7 +217,7 @@
 		"DocumentConnection": {
 			"type": "DocumentConnection",
 			"resolveType": "multiCollectionDocumentList",
-			"collections": ["countries", "tour"]
+			"collections": ["siteSettings", "countries", "tours"]
 		},
 		"Node": { "type": "Node", "resolveType": "nodeDocument" },
 		"DocumentNode": {
@@ -203,6 +225,24 @@
 			"resolveType": "multiCollectionDocument",
 			"createDocument": "create",
 			"updateDocument": "update"
+		},
+		"SiteSettingsFeaturedTour": {
+			"type": "SiteSettingsFeaturedTour",
+			"resolveType": "multiCollectionDocument",
+			"createDocument": "create",
+			"updateDocument": "update"
+		},
+		"SiteSettings": {
+			"type": "SiteSettings",
+			"resolveType": "collectionDocument",
+			"collection": "siteSettings",
+			"createSiteSettings": "create",
+			"updateSiteSettings": "update"
+		},
+		"SiteSettingsConnection": {
+			"type": "SiteSettingsConnection",
+			"resolveType": "collectionDocumentList",
+			"collection": "siteSettings"
 		},
 		"Countries": {
 			"type": "Countries",
@@ -216,23 +256,23 @@
 			"resolveType": "collectionDocumentList",
 			"collection": "countries"
 		},
-		"TourCountry": {
-			"type": "TourCountry",
+		"ToursCountry": {
+			"type": "ToursCountry",
 			"resolveType": "multiCollectionDocument",
 			"createDocument": "create",
 			"updateDocument": "update"
 		},
-		"Tour": {
-			"type": "Tour",
+		"Tours": {
+			"type": "Tours",
 			"resolveType": "collectionDocument",
-			"collection": "tour",
-			"createTour": "create",
-			"updateTour": "update"
+			"collection": "tours",
+			"createTours": "create",
+			"updateTours": "update"
 		},
-		"TourConnection": {
-			"type": "TourConnection",
+		"ToursConnection": {
+			"type": "ToursConnection",
 			"resolveType": "collectionDocumentList",
-			"collection": "tour"
+			"collection": "tours"
 		}
 	},
 	"graphql": {
@@ -596,6 +636,67 @@
 					},
 					{
 						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "siteSettings" },
+						"arguments": [
+							{
+								"kind": "InputValueDefinition",
+								"name": { "kind": "Name", "value": "relativePath" },
+								"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+							}
+						],
+						"type": {
+							"kind": "NonNullType",
+							"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SiteSettings" } }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "siteSettingsConnection" },
+						"arguments": [
+							{
+								"kind": "InputValueDefinition",
+								"name": { "kind": "Name", "value": "before" },
+								"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+							},
+							{
+								"kind": "InputValueDefinition",
+								"name": { "kind": "Name", "value": "after" },
+								"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+							},
+							{
+								"kind": "InputValueDefinition",
+								"name": { "kind": "Name", "value": "first" },
+								"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Float" } }
+							},
+							{
+								"kind": "InputValueDefinition",
+								"name": { "kind": "Name", "value": "last" },
+								"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Float" } }
+							},
+							{
+								"kind": "InputValueDefinition",
+								"name": { "kind": "Name", "value": "sort" },
+								"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+							},
+							{
+								"kind": "InputValueDefinition",
+								"name": { "kind": "Name", "value": "filter" },
+								"type": {
+									"kind": "NamedType",
+									"name": { "kind": "Name", "value": "SiteSettingsFilter" }
+								}
+							}
+						],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "SiteSettingsConnection" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
 						"name": { "kind": "Name", "value": "countries" },
 						"arguments": [
 							{
@@ -657,7 +758,7 @@
 					},
 					{
 						"kind": "FieldDefinition",
-						"name": { "kind": "Name", "value": "tour" },
+						"name": { "kind": "Name", "value": "tours" },
 						"arguments": [
 							{
 								"kind": "InputValueDefinition",
@@ -667,12 +768,12 @@
 						],
 						"type": {
 							"kind": "NonNullType",
-							"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Tour" } }
+							"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Tours" } }
 						}
 					},
 					{
 						"kind": "FieldDefinition",
-						"name": { "kind": "Name", "value": "tourConnection" },
+						"name": { "kind": "Name", "value": "toursConnection" },
 						"arguments": [
 							{
 								"kind": "InputValueDefinition",
@@ -702,12 +803,15 @@
 							{
 								"kind": "InputValueDefinition",
 								"name": { "kind": "Name", "value": "filter" },
-								"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "TourFilter" } }
+								"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ToursFilter" } }
 							}
 						],
 						"type": {
 							"kind": "NonNullType",
-							"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "TourConnection" } }
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "ToursConnection" }
+							}
 						}
 					}
 				]
@@ -718,13 +822,21 @@
 				"fields": [
 					{
 						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "siteSettings" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "SiteSettingsFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
 						"name": { "kind": "Name", "value": "countries" },
 						"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "CountriesFilter" } }
 					},
 					{
 						"kind": "InputValueDefinition",
-						"name": { "kind": "Name", "value": "tour" },
-						"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "TourFilter" } }
+						"name": { "kind": "Name", "value": "tours" },
+						"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ToursFilter" } }
 					}
 				]
 			},
@@ -916,9 +1028,152 @@
 				"name": { "kind": "Name", "value": "DocumentNode" },
 				"directives": [],
 				"types": [
+					{ "kind": "NamedType", "name": { "kind": "Name", "value": "SiteSettings" } },
 					{ "kind": "NamedType", "name": { "kind": "Name", "value": "Countries" } },
-					{ "kind": "NamedType", "name": { "kind": "Name", "value": "Tour" } },
+					{ "kind": "NamedType", "name": { "kind": "Name", "value": "Tours" } },
 					{ "kind": "NamedType", "name": { "kind": "Name", "value": "Folder" } }
+				]
+			},
+			{
+				"kind": "UnionTypeDefinition",
+				"name": { "kind": "Name", "value": "SiteSettingsFeaturedTour" },
+				"directives": [],
+				"types": [{ "kind": "NamedType", "name": { "kind": "Name", "value": "Tours" } }]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [
+					{ "kind": "NamedType", "name": { "kind": "Name", "value": "Node" } },
+					{ "kind": "NamedType", "name": { "kind": "Name", "value": "Document" } }
+				],
+				"directives": [],
+				"name": { "kind": "Name", "value": "SiteSettings" },
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "featuredTour" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "SiteSettingsFeaturedTour" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "id" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ID" } }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "_sys" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SystemInfo" } }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "_values" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "JSON" } }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": { "kind": "Name", "value": "SiteSettingsFeaturedTourFilter" },
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "tours" },
+						"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ToursFilter" } }
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": { "kind": "Name", "value": "SiteSettingsFilter" },
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "featuredTour" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "SiteSettingsFeaturedTourFilter" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [],
+				"directives": [],
+				"name": { "kind": "Name", "value": "SiteSettingsConnectionEdges" },
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "cursor" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "node" },
+						"arguments": [],
+						"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SiteSettings" } }
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [{ "kind": "NamedType", "name": { "kind": "Name", "value": "Connection" } }],
+				"directives": [],
+				"name": { "kind": "Name", "value": "SiteSettingsConnection" },
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "pageInfo" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "PageInfo" } }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "totalCount" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Float" } }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "edges" },
+						"arguments": [],
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "SiteSettingsConnectionEdges" }
+							}
+						}
+					}
 				]
 			},
 			{
@@ -1128,7 +1383,7 @@
 			},
 			{
 				"kind": "UnionTypeDefinition",
-				"name": { "kind": "Name", "value": "TourCountry" },
+				"name": { "kind": "Name", "value": "ToursCountry" },
 				"directives": [],
 				"types": [{ "kind": "NamedType", "name": { "kind": "Name", "value": "Countries" } }]
 			},
@@ -1139,7 +1394,7 @@
 					{ "kind": "NamedType", "name": { "kind": "Name", "value": "Document" } }
 				],
 				"directives": [],
-				"name": { "kind": "Name", "value": "Tour" },
+				"name": { "kind": "Name", "value": "Tours" },
 				"fields": [
 					{
 						"kind": "FieldDefinition",
@@ -1207,7 +1462,7 @@
 						"arguments": [],
 						"type": {
 							"kind": "NonNullType",
-							"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "TourCountry" } }
+							"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ToursCountry" } }
 						}
 					},
 					{
@@ -1359,7 +1614,7 @@
 			},
 			{
 				"kind": "InputObjectTypeDefinition",
-				"name": { "kind": "Name", "value": "TourCountryFilter" },
+				"name": { "kind": "Name", "value": "ToursCountryFilter" },
 				"fields": [
 					{
 						"kind": "InputValueDefinition",
@@ -1391,7 +1646,7 @@
 			},
 			{
 				"kind": "InputObjectTypeDefinition",
-				"name": { "kind": "Name", "value": "TourSButtonSButtonFilter" },
+				"name": { "kind": "Name", "value": "ToursSButtonSButtonFilter" },
 				"fields": [
 					{
 						"kind": "InputValueDefinition",
@@ -1402,21 +1657,21 @@
 			},
 			{
 				"kind": "InputObjectTypeDefinition",
-				"name": { "kind": "Name", "value": "TourSButtonFilter" },
+				"name": { "kind": "Name", "value": "ToursSButtonFilter" },
 				"fields": [
 					{
 						"kind": "InputValueDefinition",
 						"name": { "kind": "Name", "value": "SButton" },
 						"type": {
 							"kind": "NamedType",
-							"name": { "kind": "Name", "value": "TourSButtonSButtonFilter" }
+							"name": { "kind": "Name", "value": "ToursSButtonSButtonFilter" }
 						}
 					}
 				]
 			},
 			{
 				"kind": "InputObjectTypeDefinition",
-				"name": { "kind": "Name", "value": "TourFilter" },
+				"name": { "kind": "Name", "value": "ToursFilter" },
 				"fields": [
 					{
 						"kind": "InputValueDefinition",
@@ -1463,7 +1718,7 @@
 						"name": { "kind": "Name", "value": "country" },
 						"type": {
 							"kind": "NamedType",
-							"name": { "kind": "Name", "value": "TourCountryFilter" }
+							"name": { "kind": "Name", "value": "ToursCountryFilter" }
 						}
 					},
 					{
@@ -1481,7 +1736,7 @@
 						"name": { "kind": "Name", "value": "SButton" },
 						"type": {
 							"kind": "NamedType",
-							"name": { "kind": "Name", "value": "TourSButtonFilter" }
+							"name": { "kind": "Name", "value": "ToursSButtonFilter" }
 						}
 					}
 				]
@@ -1490,7 +1745,7 @@
 				"kind": "ObjectTypeDefinition",
 				"interfaces": [],
 				"directives": [],
-				"name": { "kind": "Name", "value": "TourConnectionEdges" },
+				"name": { "kind": "Name", "value": "ToursConnectionEdges" },
 				"fields": [
 					{
 						"kind": "FieldDefinition",
@@ -1505,7 +1760,7 @@
 						"kind": "FieldDefinition",
 						"name": { "kind": "Name", "value": "node" },
 						"arguments": [],
-						"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Tour" } }
+						"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Tours" } }
 					}
 				]
 			},
@@ -1513,7 +1768,7 @@
 				"kind": "ObjectTypeDefinition",
 				"interfaces": [{ "kind": "NamedType", "name": { "kind": "Name", "value": "Connection" } }],
 				"directives": [],
-				"name": { "kind": "Name", "value": "TourConnection" },
+				"name": { "kind": "Name", "value": "ToursConnection" },
 				"fields": [
 					{
 						"kind": "FieldDefinition",
@@ -1541,7 +1796,7 @@
 							"kind": "ListType",
 							"type": {
 								"kind": "NamedType",
-								"name": { "kind": "Name", "value": "TourConnectionEdges" }
+								"name": { "kind": "Name", "value": "ToursConnectionEdges" }
 							}
 						}
 					}
@@ -1700,6 +1955,64 @@
 					},
 					{
 						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "updateSiteSettings" },
+						"arguments": [
+							{
+								"kind": "InputValueDefinition",
+								"name": { "kind": "Name", "value": "relativePath" },
+								"type": {
+									"kind": "NonNullType",
+									"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+								}
+							},
+							{
+								"kind": "InputValueDefinition",
+								"name": { "kind": "Name", "value": "params" },
+								"type": {
+									"kind": "NonNullType",
+									"type": {
+										"kind": "NamedType",
+										"name": { "kind": "Name", "value": "SiteSettingsMutation" }
+									}
+								}
+							}
+						],
+						"type": {
+							"kind": "NonNullType",
+							"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SiteSettings" } }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "createSiteSettings" },
+						"arguments": [
+							{
+								"kind": "InputValueDefinition",
+								"name": { "kind": "Name", "value": "relativePath" },
+								"type": {
+									"kind": "NonNullType",
+									"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+								}
+							},
+							{
+								"kind": "InputValueDefinition",
+								"name": { "kind": "Name", "value": "params" },
+								"type": {
+									"kind": "NonNullType",
+									"type": {
+										"kind": "NamedType",
+										"name": { "kind": "Name", "value": "SiteSettingsMutation" }
+									}
+								}
+							}
+						],
+						"type": {
+							"kind": "NonNullType",
+							"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SiteSettings" } }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
 						"name": { "kind": "Name", "value": "updateCountries" },
 						"arguments": [
 							{
@@ -1758,7 +2071,7 @@
 					},
 					{
 						"kind": "FieldDefinition",
-						"name": { "kind": "Name", "value": "updateTour" },
+						"name": { "kind": "Name", "value": "updateTours" },
 						"arguments": [
 							{
 								"kind": "InputValueDefinition",
@@ -1775,19 +2088,19 @@
 									"kind": "NonNullType",
 									"type": {
 										"kind": "NamedType",
-										"name": { "kind": "Name", "value": "TourMutation" }
+										"name": { "kind": "Name", "value": "ToursMutation" }
 									}
 								}
 							}
 						],
 						"type": {
 							"kind": "NonNullType",
-							"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Tour" } }
+							"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Tours" } }
 						}
 					},
 					{
 						"kind": "FieldDefinition",
-						"name": { "kind": "Name", "value": "createTour" },
+						"name": { "kind": "Name", "value": "createTours" },
 						"arguments": [
 							{
 								"kind": "InputValueDefinition",
@@ -1804,14 +2117,14 @@
 									"kind": "NonNullType",
 									"type": {
 										"kind": "NamedType",
-										"name": { "kind": "Name", "value": "TourMutation" }
+										"name": { "kind": "Name", "value": "ToursMutation" }
 									}
 								}
 							}
 						],
 						"type": {
 							"kind": "NonNullType",
-							"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Tour" } }
+							"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Tours" } }
 						}
 					}
 				]
@@ -1822,6 +2135,14 @@
 				"fields": [
 					{
 						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "siteSettings" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "SiteSettingsMutation" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
 						"name": { "kind": "Name", "value": "countries" },
 						"type": {
 							"kind": "NamedType",
@@ -1830,8 +2151,8 @@
 					},
 					{
 						"kind": "InputValueDefinition",
-						"name": { "kind": "Name", "value": "tour" },
-						"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "TourMutation" } }
+						"name": { "kind": "Name", "value": "tours" },
+						"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ToursMutation" } }
 					},
 					{
 						"kind": "InputValueDefinition",
@@ -1846,6 +2167,14 @@
 				"fields": [
 					{
 						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "siteSettings" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "SiteSettingsMutation" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
 						"name": { "kind": "Name", "value": "countries" },
 						"type": {
 							"kind": "NamedType",
@@ -1854,8 +2183,19 @@
 					},
 					{
 						"kind": "InputValueDefinition",
-						"name": { "kind": "Name", "value": "tour" },
-						"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "TourMutation" } }
+						"name": { "kind": "Name", "value": "tours" },
+						"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ToursMutation" } }
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": { "kind": "Name", "value": "SiteSettingsMutation" },
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "featuredTour" },
+						"type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
 					}
 				]
 			},
@@ -1882,7 +2222,7 @@
 			},
 			{
 				"kind": "InputObjectTypeDefinition",
-				"name": { "kind": "Name", "value": "TourMutation" },
+				"name": { "kind": "Name", "value": "ToursMutation" },
 				"fields": [
 					{
 						"kind": "InputValueDefinition",

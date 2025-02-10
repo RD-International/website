@@ -1,6 +1,7 @@
 import { CATEGORIES } from '../src/data/categories.ts'
 import { defineConfig } from 'tinacms'
 import CountryReference from './CountryReference.tsx'
+import TourSelect from './TourSelect.tsx'
 
 // Your hosting provider likely exposes this as an environment variable
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || 'main'
@@ -25,6 +26,31 @@ export default defineConfig({
 	},
 	schema: {
 		collections: [
+			{
+				label: 'Site Settings',
+				name: 'siteSettings',
+				path: 'src/content/settings',
+				format: 'json',
+				fields: [
+					{
+						label: 'Featured Tour',
+						name: 'featuredTour',
+						type: 'reference',
+						collections: ['tours'],
+						description: 'Tour to be featured on the landing page',
+						required: true,
+						ui: {
+							component: TourSelect
+						}
+					}
+				],
+				ui: {
+					allowedActions: {
+						create: false,
+						delete: false
+					}
+				}
+			},
 			{
 				name: 'countries',
 				label: 'Countries',
@@ -58,7 +84,7 @@ export default defineConfig({
 			},
 
 			{
-				name: 'tour',
+				name: 'tours',
 				label: 'Tour',
 				path: 'src/content/tours',
 				format: 'mdx',
