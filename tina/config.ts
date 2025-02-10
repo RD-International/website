@@ -40,6 +40,7 @@ export default defineConfig({
 						description: 'Tour to be featured on the landing page',
 						required: true,
 						ui: {
+							//@ts-ignore
 							component: TourSelect
 						}
 					}
@@ -152,6 +153,7 @@ export default defineConfig({
 						description: 'Country for this tour',
 						required: true,
 						ui: {
+							//@ts-ignore
 							component: CountryReference
 						}
 					},

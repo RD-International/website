@@ -1,49 +1,59 @@
 'use client'
 
-import type { ReferenceFieldProps } from 'node_modules/tinacms/dist/toolkit/fields/components/reference/model/reference-field-props'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Client, useCMS, wrapFieldsWithMeta } from 'tinacms'
+
+interface CountryOption {
+	name: string
+	value: string
+}
 
 const CountryReference = wrapFieldsWithMeta(({ input }) => {
 	const collectionName = 'Countries'
 	const collectionString = collectionName.toLowerCase()
 	const connectionName = `${collectionString}Connection`
-	const [options, setOptions] = React.useState([])
+	const [options, setOptions] = useState<CountryOption[]>([])
 	const cms = useCMS()
-	React.useEffect(() => {
-		const run = async () => {
-			const client = cms.api.tina as Client
-			const res = await client.request(
-				`
-    query ${connectionName} {
-      ${connectionName} {
-        totalCount
-        edges {
-          cursor
-          node {
-            __typename
-            ... on ${collectionName} {
-              id
-              name
-              
+
+	useEffect(() => {
+		const fetchCountries = async () => {
+			try {
+				const client = cms.api.tina as Client
+				//@ts-ignore
+				const res = await client.request<{
+					//@ts-ignore
+					[connectionName]: {
+						edges: { node: { id: string; name: string } }[]
+					}
+				}>(
+					`
+        query ${connectionName} {
+          ${connectionName} {
+            edges {
+              node {
+                id
+                name
+              }
             }
           }
         }
-      }
-    }
-    `,
-				{ variables: {} }
-			)
-			const nodes: any[] = []
-			res[connectionName].edges?.map((edge) => nodes.push(edge.node))
-			const opts = nodes.map((n) => ({
-				name: n.name,
-				value: n.id.split('/').pop().split('.')[0]
-			}))
-			setOptions(opts)
+        `
+				)
+
+				const nodes = res[connectionName]?.edges?.map((edge) => edge.node) || []
+				const opts = nodes.map((n) => ({
+					name: n.name,
+					value: n.id.split('/').pop()?.split('.')[0] || ''
+				}))
+
+				setOptions(opts)
+			} catch (error) {
+				console.error('Error fetching countries:', error)
+			}
 		}
-		run()
-	}, [])
+
+		fetchCountries()
+	}, [cms])
 
 	return (
 		<div>
@@ -51,12 +61,12 @@ const CountryReference = wrapFieldsWithMeta(({ input }) => {
 				<select
 					id='location'
 					name='location'
-					defaultValue='Canada'
+					value={input.value}
 					onChange={input.onChange}
 					className='col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-blue-600 sm:text-sm/6'
 				>
 					{options.map((p, idx) => (
-						<option value={p.value} key={idx}>
+						<option key={idx} value={p.value}>
 							{p.name}
 						</option>
 					))}
