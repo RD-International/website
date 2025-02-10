@@ -4,7 +4,7 @@
 		"meta": { "flags": ["experimentalData"] },
 		"collections": [
 			{
-				"label": "Site Settings ",
+				"label": "Site Settings",
 				"name": "siteSettings",
 				"path": "src/content/settings",
 				"format": "json",
