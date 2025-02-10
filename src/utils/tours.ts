@@ -1,7 +1,6 @@
 import { CATEGORIES } from '@/data/categories'
 import { getCollection, getEntry, type CollectionEntry } from 'astro:content'
-import type { Tour } from 'tina/__generated__/types'
-import settings from '/src/content/settings/index.json'
+import settings from '@/content/settings/index.json'
 
 export const getTours = async (max?: number) => {
 	const tours: CollectionEntry<'tours'>[] = await getCollection('tours')

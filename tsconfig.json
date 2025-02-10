@@ -11,7 +11,8 @@
 			"@/data/*": ["src/data/*"],
 			"@/site-config": ["src/data/site.config.ts"],
 			"@/styles": ["src/styles/"],
-			"@/assets/*": ["src/assets/*"]
+			"@/assets/*": ["src/assets/*"],
+			"@/content/*": ["src/content/*"]
 		},
 		"jsx": "react-jsx",
 		"jsxImportSource": "react"
