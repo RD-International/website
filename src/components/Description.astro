@@ -9,13 +9,15 @@ import { Image } from 'astro:assets'
 const base = import.meta.env.BASE_URL
 ---
 
-<div class='overflow-hidden py-24 pb-40 bg-gradient-to-br from-blue-400/30 to-teal-400/30'>
+<div class='overflow-hidden py-24 pb-40 bg-gradient-to-br from-blue-400/30 to-teal-400/30 bg-white'>
 	<div class='mx-auto max-w-7xl px-6 lg:flex lg:px-8'>
 		<div
 			class='mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8'
 		>
 			<div class='lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8'>
-				<h2 class='text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl'>
+				<h2
+					class='text-4xl font-semibold tracking-tight dark:text-gray-900 text-gray-900 sm:text-5xl'
+				>
 					WHEREVER YOU WANT TO GO, WE'LL HELP YOU GET THERE.
 				</h2>
 
