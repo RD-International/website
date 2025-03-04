@@ -64,7 +64,7 @@ const base = import.meta.env.BASE_URL
 		<ul class='hidden lg:flex lg:gap-x-12 bg-teal-950/40 rounded-full px-4 py-1'>
 			{
 				links.map((l) => (
-					<a href={`${base}/${l.href}`} class='text-sm/6 font-semibold text-white'>
+					<a href={base ? `${base}/${l.href}` : l.href} class='text-sm/6 font-semibold text-white'>
 						{l.name}
 					</a>
 				))

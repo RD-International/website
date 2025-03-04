@@ -32,7 +32,7 @@ interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-	site: 'https://rd-international.github.io/', // Write here your website url
+	site: 'https://website-3ql.pages.dev/', // Write here your website url
 	base: '',
 	author: 'Your Name', // Site author
 	title: 'RD Intl. Travel Agency', // Site title.
