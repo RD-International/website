@@ -33,7 +33,7 @@ interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
 	site: 'https://rd-international.github.io/', // Write here your website url
-	base: '/',
+	base: '',
 	author: 'Your Name', // Site author
 	title: 'RD Intl. Travel Agency', // Site title.
 	description: 'Muslim Travel Agency specialising in South East Asia', // Description to display in the meta countries
