@@ -31,3 +31,4 @@
 - [ ] Finalize Whatsapp Message
 - [ ] Move Social Login to siteConfig
 - [ ] Move clientId and secret to environment variables
+- [ ] Host on cloudflare
