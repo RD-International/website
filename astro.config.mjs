@@ -12,7 +12,7 @@ import react from '@astrojs/react'
 // https://astro.build/config
 export default defineConfig({
 	site: siteConfig.site,
-	base: null,
+	base: '',
 
 	trailingSlash: 'never',
 	redirects: {},
