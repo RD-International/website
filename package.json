@@ -9,9 +9,6 @@
 		"type": "git",
 		"url": "https://github.com/danielcgilibert/blog-template"
 	},
-	"engines": {
-		"node": "^18.17.1"
-	},
 	"keywords": [
 		"astro",
 		"astrojs",
