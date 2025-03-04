@@ -73,5 +73,6 @@
 		"*.{astro,js,jsx,ts,tsx,md,mdx,json}": [
 			"prettier --write --plugin-search-dir=."
 		]
-	}
+	},
+	"packageManager": "yarn@1.22.22"
 }
