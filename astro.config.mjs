@@ -14,7 +14,6 @@ export default defineConfig({
 	site: siteConfig.site,
 	base: '',
 
-	trailingSlash: 'never',
 	redirects: {},
 	markdown: {
 		remarkPlugins: [remarkReadingTime],
