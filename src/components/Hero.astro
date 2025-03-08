@@ -4,10 +4,14 @@ import PromotionalVideo from ''
 const { featured } = Astro.props
 
 const base = import.meta.env.BASE_URL
+const tina_project_id = import.meta.env.TINA_PUBLIC_CLIENT_ID
+const tina_token = import.meta.env.TINA_TOKEN
 ---
 
 <div class='bg-gray-900'>
 	<div class='relative isolate w-full overflow-hidden pt-32 sm:pt-10'>
+		Test public - {tina_project_id}
+		token - {tina_token}
 		<div class='w-full p-10'>
 			<video
 				src='https://rdtours.netlify.app/assets/WEB-CkIHYpbx.mp4'
