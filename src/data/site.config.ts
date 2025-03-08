@@ -57,7 +57,7 @@ export const siteConfig: SiteConfig = {
 			{ whatsapp: true, booking: false, number: '+9609411751' }
 		],
 
-		emails: ['rdinternn@gmail.com', 'info@rd.tours'],
+		emails: ['info@rd.tours'],
 		estabilished: 2001,
 		members: [
 			{
