@@ -19,6 +19,7 @@ const CountryReference = wrapFieldsWithMeta(({ input }) => {
 		const fetchCountries = async () => {
 			try {
 				const client = cms.api.tina as Client
+				console.log(client.request)
 				//@ts-ignore
 				const res = await client.request<{
 					//@ts-ignore
@@ -27,17 +28,22 @@ const CountryReference = wrapFieldsWithMeta(({ input }) => {
 					}
 				}>(
 					`
-        query ${connectionName} {
-          ${connectionName} {
-            edges {
-              node {
-                id
-                name
-              }
+query countriesConnection {
+      countriesConnection {
+        totalCount
+        edges {
+          cursor
+          node {
+            __typename
+            ... on Countries {
+              id
+              name
             }
           }
         }
-        `
+      }
+    }`,
+					{ variables: {} }
 				)
 
 				const nodes = res[connectionName]?.edges?.map((edge) => edge.node) || []
