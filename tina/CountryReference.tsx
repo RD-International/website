@@ -73,6 +73,7 @@ query countriesConnection {
 				>
 					{options.map((p, idx) => (
 						<option key={idx} value={p.value}>
+							{p.value}
 							{p.name}
 						</option>
 					))}
