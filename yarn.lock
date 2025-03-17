@@ -688,46 +688,46 @@
   resolved "https://registry.yarnpkg.com/@braintree/sanitize-url/-/sanitize-url-6.0.4.tgz#923ca57e173c6b232bbbb07347b1be982f03e783"
   integrity sha512-s3jaWicZd0pkP0jf5ysyHUI/RE7MHos6qlToFcGWXVp+ykHOy77OUMrfbgJ9it2C5bow7OIQwYYaHjk9XlBQ2A==
 
-"@clerk/astro@^2.1.7":
-  version "2.1.7"
-  resolved "https://registry.yarnpkg.com/@clerk/astro/-/astro-2.1.7.tgz#3aa9eb6e5743b815d78e69b8c52f5957a4320a96"
-  integrity sha512-ixGD4STQZh1Rxs1G3VKT8uvId9at5DPOBXulAouDdjtK0fdHZ+nLf7vzFJ91bpBtAuwPtYSDviDAPUDUvsyRCA==
+"@clerk/astro@^2.3.3":
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/@clerk/astro/-/astro-2.3.3.tgz#5a2f0d9ab70551e860f1d7af406650094fe44ebd"
+  integrity sha512-5d8S1vqpl9k2CtAae4JjcAhdgO8HUFOpr+vXlphuuuPD1fFS6X/OcoU8h17FRXQybALNd4rVJ300p2rhmo3EQQ==
   dependencies:
-    "@clerk/backend" "^1.22.0"
-    "@clerk/shared" "^2.20.6"
-    "@clerk/types" "^4.40.2"
+    "@clerk/backend" "^1.25.2"
+    "@clerk/shared" "^3.0.1"
+    "@clerk/types" "^4.48.0"
     nanoid "5.0.9"
     nanostores "0.11.3"
 
-"@clerk/backend@^1.22.0":
-  version "1.22.0"
-  resolved "https://registry.yarnpkg.com/@clerk/backend/-/backend-1.22.0.tgz#80a721eae4d4d523569fcbd1dd0af46adb395e02"
-  integrity sha512-nu6dAigcsqMLt2K+seBKb+goWzsKgxylFA9O9vcXPeNKk+rsrFPQVIv/X1Kt5O/IgZNbmRFch4MSF9XU6rqIRw==
+"@clerk/backend@^1.25.2":
+  version "1.25.2"
+  resolved "https://registry.yarnpkg.com/@clerk/backend/-/backend-1.25.2.tgz#4fdd2f1d99493b710c7416ff71186922b4462670"
+  integrity sha512-habBg77Nss4xhN+hvw3pbNxjRdEdKIUINpLRo2kHrvg7ZcKIux+75H283yQPE728hTwaKGxUnIEISgH4NLjeQw==
   dependencies:
-    "@clerk/shared" "^2.20.6"
-    "@clerk/types" "^4.40.2"
+    "@clerk/shared" "^3.0.1"
+    "@clerk/types" "^4.48.0"
     cookie "1.0.2"
     snakecase-keys "8.0.1"
     tslib "2.4.1"
 
-"@clerk/shared@^2.20.6":
-  version "2.20.6"
-  resolved "https://registry.yarnpkg.com/@clerk/shared/-/shared-2.20.6.tgz#b46aef93d224e5da1424bd4e299189de847d641b"
-  integrity sha512-DnxXbPPUNQQMOlAQFEn0iAiwPtjO4yKVabSgs+qn86VsNWWHnG//uHJzB6nmDk8n5RYGe/vMum73/Lz/Pg1SgQ==
+"@clerk/shared@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@clerk/shared/-/shared-3.0.1.tgz#857e584b44460eb4e5388c2d31b6822a8efca64a"
+  integrity sha512-WGyzVQuwAr8/P4fhMGq8G4IVKxXZtPEVe6RVE9EEMjAHtD77MF9Bu/0Dfb8jHYeyHOGsJm73I7aaDbgDZDkJzw==
   dependencies:
-    "@clerk/types" "^4.40.2"
+    "@clerk/types" "^4.48.0"
     dequal "2.0.3"
     glob-to-regexp "0.4.1"
     js-cookie "3.0.5"
     std-env "^3.7.0"
     swr "^2.2.0"
 
-"@clerk/types@^4.40.2":
-  version "4.40.2"
-  resolved "https://registry.yarnpkg.com/@clerk/types/-/types-4.40.2.tgz#1fb9b0f4082d5ffe54054f34c2c079002e291bdb"
-  integrity sha512-Jkt8YiqtFSRvCsN+8/MR2V0Cl83xtuqZVuV6ygQ6VJeSbmmFP0q5CSowlJ8mon2bELrlUnWH011dhAjELmvXqg==
+"@clerk/types@^4.48.0":
+  version "4.48.0"
+  resolved "https://registry.yarnpkg.com/@clerk/types/-/types-4.48.0.tgz#1a26e33b851998c0eb28cfd63e842a4e47120393"
+  integrity sha512-zuWeEMxgtuxLKQCnzioSwuCFJVk1rVO+rXFhD8aBcyvBH6fadGp4IZzh7/Ov1HRiqpku5xPc010uubgC7jXMeQ==
   dependencies:
-    csstype "3.1.1"
+    csstype "3.1.3"
 
 "@emnapi/runtime@^1.2.0":
   version "1.3.1"
@@ -4675,12 +4675,7 @@ cssesc@^3.0.0:
   resolved "https://registry.yarnpkg.com/cssesc/-/cssesc-3.0.0.tgz#37741919903b868565e1c09ea747445cd18983ee"
   integrity sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==
 
-csstype@3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.1.1.tgz#841b532c45c758ee546a11d5bd7b7b473c8c30b9"
-  integrity sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==
-
-csstype@^3.0.2, csstype@^3.1.2:
+csstype@3.1.3, csstype@^3.0.2, csstype@^3.1.2:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.1.3.tgz#d80ff294d114fb0e6ac500fbf85b60137d7eff81"
   integrity sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==
