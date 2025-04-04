@@ -96,12 +96,11 @@ const SocialLinks = [
 								</div>
 							))
 						}
-						whatsappNumber
 						{
 							siteConfig.company.phoneNumbers.map((phonenumber) => (
 								<div class='flex gap-x-4'>
 									<dt class='flex-none'>
-										<span class='sr-only'>Telephone</span>
+										<span class='sr-only'>WhatsApp</span>
 										{phonenumber.whatsapp ? (
 											<Image src={WhatsappIcon} alt='link.imageAlt' class='w-6 h-6' />
 										) : (
