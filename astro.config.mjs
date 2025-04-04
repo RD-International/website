@@ -32,7 +32,6 @@ export default defineConfig({
 			shikiConfig: {
 				experimentalThemes: {
 					light: 'vitesse-light',
-					dark: 'material-theme-palenight'
 				},
 				wrap: true
 			},

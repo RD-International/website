@@ -24,7 +24,7 @@ const getRelatedTours = (tour: Props) => {
 	//FIXME: Replace this
 	const lowercaseCountry = tour.data.country
 	const relatedTours = tours.filter(
-		(p) => p.slug !== tour.slug && p.data.country == lowercaseCountry
+		(p: any) => p.slug !== tour.slug && p.data.country == lowercaseCountry
 	)
 	return relatedTours.slice(0, MAX_TOURS)
 }
@@ -51,7 +51,7 @@ const disqusEnabled = disqusConfig.enabled
 
 			<!-- related tours -->
 			<footer>
-				<h2 class='font-bold text-lg dark:text-white mb-6'>Related Tours</h2>
+				<h2 class='font-bold text-lgmb-6'>Related Tours</h2>
 				<ListRelatedTours tours={relatedTours} />
 			</footer>
 		</article>
