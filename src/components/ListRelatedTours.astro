@@ -5,10 +5,10 @@ import { cn } from '@/utils'
 import { Image } from 'astro:assets'
 
 type Props = {
-	tours: CollectionEntry<'blog'>[]
+	tours: CollectionEntry<any>[]
 }
 
-const { tours } = Astro.props
+const { tours } : any = Astro.props
 
 const base = import.meta.env.BASE_URL
 ---
@@ -16,7 +16,7 @@ const base = import.meta.env.BASE_URL
 <section class={cn(`flex flex-col md:flex-row sm:justify-between gap-8`)}>
 	{
 		tours.length > 0 ? (
-			tours.map((tour) => {
+			tours.map((tour: any) => {
 				return (
 					<div class='flex flex-wrap gap-2'>
 						<div class='min-h-full'>
