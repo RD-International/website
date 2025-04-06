@@ -98,6 +98,12 @@ const SocialLinks = [
 						}
 						{
 							siteConfig.company.phoneNumbers.map((phonenumber) => (
+								<a href={
+												phonenumber.whatsapp
+													? `https://wa.me/${phonenumber.number}?text=${whatsappMessage}`
+													: `tel:${phonenumber.number}`
+											}>
+
 								<div class='flex gap-x-4'>
 									<dt class='flex-none'>
 										<span class='sr-only'>WhatsApp</span>
@@ -120,10 +126,13 @@ const SocialLinks = [
 										</a>
 									</dd>
 								</div>
+							</a>
+
 							))
 						}
 						{
 							siteConfig.company.emails.map((email) => (
+								<a href={`mailto:${email}`}>
 								<div class='flex gap-x-4'>
 									<dt class='flex-none'>
 										<span class='sr-only'>Email</span>
@@ -135,11 +144,14 @@ const SocialLinks = [
 										</a>
 									</dd>
 								</div>
+							</a>
+
 							))
 						}
 
 						{
 							SocialLinks.map((link) => (
+								<a href={link.href}>
 								<div class='flex gap-x-4'>
 									<dt class='flex-none'>
 										<span class='sr-only'>Whatsapp</span>
@@ -151,6 +163,8 @@ const SocialLinks = [
 										</a>
 									</dd>
 								</div>
+							</a>
+
 							))
 						}
 					</dl>
