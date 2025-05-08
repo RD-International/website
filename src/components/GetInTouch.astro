@@ -1,13 +1,12 @@
 ---
 import { siteConfig } from '@/data/site.config'
-import GoogleMapsEmbed from './GoogleMapsEmbed.astro'
 import { Image } from 'astro:assets'
 
 import InstagramIcon from '@/assets/images/instagram.svg'
 import FacebookIcon from '@/assets/images/facebook.svg'
 import WhatsappIcon from '@/assets/images/whatsapp.svg'
 import TikTokIcon from '@/assets/images/tiktok.svg'
-import { Mail, Map, MapPin, MapPinned, Phone } from 'lucide-astro'
+import { Mail, MapPinned, Phone } from 'lucide-astro'
 import ContactForm from './ContactForm.astro'
 
 const whatsappMessage = `Hello, can you tell me more about your tours?`
@@ -70,7 +69,7 @@ const SocialLinks = [
 					</svg>
 				</div>
 				<h2 class='text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl'>
-					Get in touch
+					Contact us
 				</h2>
 				<p class='mt-6 text-lg/8 text-gray-600'>
 					Have questions or need more information? We're here to help make your travel experience
@@ -169,12 +168,7 @@ const SocialLinks = [
 						}
 					</dl>
 
-					<div
-						style='height: 24rem;'
-						class='col-span-2 shadow shadow-inset border border-slate-300 mt-8 sm:order-3'
-					>
-						<GoogleMapsEmbed />
-					</div>
+				
 				</div>
 			</div>
 		</div>
