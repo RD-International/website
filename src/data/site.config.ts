@@ -42,11 +42,6 @@ export const siteConfig: SiteConfig = {
 		shortName: 'RD Intl.',
 		addresses: [
 			{
-				firstLineAddress: 'SkyPark @ Cyberjaya, Jalan Teknokrat 1',
-				secondLineAddress: 'Cyberjaya, Selangor, 63000'
-			},
-
-			{
 				firstLineAddress: 'RD Maldives Pvt. Ltd.',
 				secondLineAddress: 'M. Shaamy Villa, 3rd Floor'
 			}
