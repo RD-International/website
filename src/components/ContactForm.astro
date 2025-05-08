@@ -1,8 +1,8 @@
 <form id="form" class="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48">
 	<div class="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
 	  <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-		<div>
-		  <label class="block text-sm/6 font-semibold text-gray-900">Name</label>
+		<div class="sm:col-span-2">
+			<label class="block text-sm/6 font-semibold text-gray-900">Name</label>
 		  <input name="name" type="text" required class="block w-full rounded-md px-3.5 py-2" placeholder="Full Name" />
 		</div>
 		<div>
@@ -13,6 +13,10 @@
 		  <label class="block text-sm/6 font-semibold text-gray-900">Number of Children</label>
 		  <input name="children" type="number" min="0" required class="block w-full rounded-md px-3.5 py-2" placeholder="Number of Children" />
 		</div>
+		<div>
+			<label class="block text-sm/6 font-semibold text-gray-900">Number of Room</label>
+			<input name="room" type="text" required class="block w-full rounded-md px-3.5 py-2" placeholder="Number of Room" />
+		  </div>
 		<div class="sm:col-span-2">
 		  <label class="block text-sm/6 font-semibold text-gray-900">Email</label>
 		  <input name="email" type="email" required class="block w-full rounded-md px-3.5 py-2" placeholder="Email" />
@@ -78,6 +82,7 @@
   <b>📝 New Tour Inquiry</b>
   👤 Name: ${data.name}
   👪 Adults: ${data.adults} | Children: ${data.children}
+  🏨 Room: ${data.room}
   📧 Email: ${data.email}
   📞 Phone: ${data.phone}
   📅 Arrival: ${data.arrival} | Departure: ${data.departure}
