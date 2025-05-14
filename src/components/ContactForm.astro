@@ -119,59 +119,6 @@
 	}
   </script>
   
-  
-  <script>
-	const form = document.getElementById("form") as HTMLFormElement | null;
-	const result = document.getElementById("result") as HTMLElement | null;
-  
-	const telegramBotToken = '7673458447:AAGNFK84S6-qIoCULyMSd5YFcU-dsOhXH4A';
-	const telegramChatId = '-1002638809763';
-  
-	if (form && result) {
-	  form.addEventListener("submit", function (e) {
-		e.preventDefault();
-  
-		const formData = new FormData(form);
-		const data = Object.fromEntries(formData.entries());
-  
-		const message = `
-  <b>📝 New Tour Inquiry</b>
-  👤 Name: ${data.name}
-  👪 Adults: ${data.adults} | Children: ${data.children}
-  📧 Email: ${data.email}
-  📞 Phone: ${data.phone}
-  📅 Arrival: ${data.arrival} | Departure: ${data.departure}
-  🌍 Country: ${data.country}
-  🎒 Tour Type: ${data.tour}
-  💬 Message: ${data.message || "N/A"}
-		`;
-  
-		fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
-		  method: "POST",
-		  headers: {
-			"Content-Type": "application/json"
-		  },
-		  body: JSON.stringify({
-			chat_id: telegramChatId,
-			text: message,
-			parse_mode: "HTML"
-		  })
-		})
-		  .then((res) => res.json())
-		  .then((data) => {
-			if (data.ok) {
-			  result.innerText = "✅ Your inquiry has been sent!";
-			  form.reset();
-			} else {
-			  result.innerText = "❌ Failed to send. Try again later.";
-			}
-		  })
-		  .catch((error) => {
-			console.error(error);
-			result.innerText = "⚠️ An error occurred.";
-		  });
-	  });
-	}
-  </script>
+ 
   
   
